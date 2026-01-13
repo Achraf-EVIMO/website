@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/asset/image/Logo_Export_EVIMO_LOGO-MARK_BLUE.svg">
+  <link rel="stylesheet" href="/asset/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <title>Mentions légales – EVIMO</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</head>
+
+<body class="bg-white text-gray-800">
+
+  <header class="sticky top-0 z-50 bg-transparent h-16 py-4">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+
+      <!-- 🟦 Wrapper avec blur autour du logo -->
+      <div class="backdrop-blur-md bg-white/40 rounded-full px-3 py-1">
+        <a href="index.html" class="flex items-center gap-2 font-semibold text-xl">
+          <img src="/asset/image/Logo_Export_EVIMO_PRIMARY-LOGO_COLOR.svg" alt="EVIMO logo" class="h-8 w-auto" />
+        </a>
+      </div>
+
+      <!-- Navigation -->
+       <nav id="site-nav"
+      class="hidden md:flex items-center gap-8 text-base h-[60px] border border-gray-300/30 rounded-full px-6 py-2 bg-white/60 backdrop-blur-sm transition-[backdrop-filter,background-color,box-shadow] duration-300">
+      <a href="/index.html#product" data-i18n="Product" class="underline-active">Product</a>
+      <a href="/index.html#industries" data-i18n="Industries" class="underline-active">Industries</a>
+      <a href="/index.html#how" data-i18n="How it works" class="underline-active">How it works</a>
+      <a href="/index.html#pilot" data-i18n="Pilot" class="underline-active">Pilot</a>
+      <a href="/index.html#contact" data-i18n="Contact" class="underline-active">Contact</a>
+    </nav>
+
+      <!-- Boutons -->
+       <div class="relative hidden md:flex">
+        <button id="lang-toggle" class="lang-btn" aria-label="Change language">
+          <!-- Drapeau -->
+          <iconify-icon id="lang-flag" icon="twemoji:flag-united-kingdom" width="20">
+          </iconify-icon>
+
+          <!-- Flèche -->
+          <iconify-icon icon="mdi:chevron-down" width="18">
+          </iconify-icon>
+        </button>
+
+        <!-- Dropdown -->
+        <div id="lang-menu"
+          class="absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded-md shadow-lg hidden z-50">
+          <button data-lang="EN" class="flex items-center gap-2 w-full px-4 py-2 hover:bg-gray-100">
+            <iconify-icon icon="twemoji:flag-united-kingdom" width="18"></iconify-icon>
+            English
+          </button>
+
+          <button data-lang="FR" class="flex items-center gap-2 w-full px-4 py-2 hover:bg-gray-100">
+            <iconify-icon icon="twemoji:flag-france" width="18"></iconify-icon>
+            Français
+          </button>
+        </div>
+      </div>
+
+
+      <!-- Boutons desktop -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="/index.html#contact" data-i18n="Talk to us"
+          class="btn-secondary text-base py-4 w-[150px] text-center whitespace-nowrap overflow-hidden">Talk to us</a>
+        <a href="/index.html#company" data-i18n="Book a demo"
+          class="btn-primary text-base py-4 w-[180px] text-center whitespace-nowrap overflow-hidden">Book a demo</a>
+      </div>
+
+      <!-- Burger menu -->
+      <button id="burger" class="md:hidden flex items-center justify-center w-10 h-10 ml-4" aria-label="Open menu">
+        <span class="sr-only">Open menu</span>
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+ <!-- Mobile menu -->
+<div id="mobile-menu"
+  class="md:hidden hidden absolute top-full right-4 bg-white border border-gray-200 rounded-md shadow-lg z-50 w-60">
+
+  <ul class="flex flex-col px-4 py-6 gap-4 text-base font-medium">
+    <li><a href="/index.html#product" data-i18n="Product" class="block underline-active">Product</a></li>
+    <li><a href="/index.html#industries" data-i18n="Industries" class="block underline-active">Industries</a></li>
+    <li><a href="/index.html#how" data-i18n="How it works" class="block underline-active">How it works</a></li>
+    <li><a href="/index.html#pilot" data-i18n="Pilot" class="block underline-active">Pilot</a></li>
+    <li><a href="/index.html#contact" data-i18n="Contact" class="block underline-active">Contact</a></li>
+    <li class="pt-4 border-t">
+      <div class="relative w-full">
+        <button id="lang-toggle-mobile"
+          class="lang-btn w-full flex items-center justify-between gap-2"
+          aria-label="Change language">
+          <iconify-icon id="lang-flag-mobile" icon="twemoji:flag-united-kingdom" width="20"></iconify-icon>
+          <span id="lang-current-mobile">EN</span>
+          <iconify-icon id="lang-chevron-mobile" icon="mdi:chevron-down" width="18"></iconify-icon>
+        </button>
+
+        <div id="lang-menu-mobile"
+          class="hidden mt-2 w-full bg-white border border-gray-200 rounded-md shadow-lg z-50">
+          <button data-lang="EN" class="w-full text-left px-4 py-2 hover:bg-gray-100">
+            <iconify-icon icon="twemoji:flag-united-kingdom" width="18"></iconify-icon> English
+          </button>
+          <button data-lang="FR" class="w-full text-left px-4 py-2 hover:bg-gray-100">
+            <iconify-icon icon="twemoji:flag-france" width="18"></iconify-icon> Français
+          </button>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <a href="/index.html#contact" data-i18n="Talk to us"
+        class="block underline-active btn-secondary w-full text-center">Talk to us</a>
+    </li>
+    <li>
+      <a href="/index.html#company" data-i18n="Book a demo"
+        class="block underline-active btn-primary w-full text-center">Book a demo</a>
+    </li>
+  </ul>
+</div>
+
+  </header>
+
+  <main class="mx-auto max-w-4xl px-6 lg:px-8 py-12 space-y-8">
+
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 py-6">
+      <h1 class="text-3xl font-bold text-gray-900 text-center" data-i18n="Legal Notice – EVIMO">Legal Notice – EVIMO
+      </h1>
+    </div>
+
+    <section>
+      <h2 class="text-2xl font-semibold mb-2" data-i18n="1. Website Publisher">1. Website Publisher</h2>
+      <p>
+        <span data-i18n="Company name: [Your company name]">Company name: [Your company name]</span><br>
+        <span data-i18n="Legal form: [e.g., LLC, Inc., SAS, SARL, etc.]">Legal form: [e.g., LLC, Inc., SAS, SARL,
+          etc.]</span><br>
+        <span data-i18n="Share capital: [amount in €]">Share capital: [amount in €]</span><br>
+        <span data-i18n="Registered office address: [Full address]">Registered office address: [Full address]</span><br>
+        <span data-i18n="SIRET number: [SIRET number]">SIRET number: [SIRET number]</span><br>
+        <span data-i18n="VAT number (if applicable): [EU VAT number]">VAT number (if applicable): [EU VAT
+          number]</span><br>
+        <span data-i18n="Email: [Contact email address]">Email: <a href="mailto:[Contact email address]"
+            class="text-indigo-600 hover:underline">[Contact email address]</a></span><br>
+        <span data-i18n="Phone: [Phone number]">Phone: [Phone number]</span>
+      </p>
+    </section>
+
+
+    <section>
+      <h2 class="text-2xl font-semibold mb-2" data-i18n="2. Publication Director">2. Publication Director</h2>
+      <p>
+        <span data-i18n="[Full name of the person in charge]">[Full name of the person in charge]</span><br>
+        <span data-i18n="Position: [e.g., Director, Manager, Communications Officer]">Position: [e.g., Director,
+          Manager, Communications Officer]</span>
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold mb-2" data-i18n="3. Website Hosting Provider">3. Website Hosting Provider</h2>
+      <p>
+        <span data-i18n="Hosting provider: [Hosting provider name]">Hosting provider: [Hosting provider name]</span><br>
+        <span data-i18n="Address: [Full address]">Address: [Full address]</span><br>
+        <span data-i18n="Phone: [Phone number]">Phone: [Phone number]</span><br>
+        <span data-i18n="Website: [Hosting provider URL]">Website: <a href="[Hosting provider URL]"
+            class="text-indigo-600 hover:underline">[Hosting provider URL]</a></span>
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold mb-2" data-i18n="4. Intellectual Property">4. Intellectual Property</h2>
+      <p
+        data-i18n="The content of the website (texts, images, logos, videos, software) is protected by copyright and intellectual property laws. Any reproduction, even partial, without authorization is prohibited.">
+        The content of the website (texts, images, logos, videos, software) is protected by copyright and intellectual
+        property laws. Any reproduction, even partial, without authorization is prohibited.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold mb-2" data-i18n="5. Personal Data">5. Personal Data</h2>
+      <p
+        data-i18n="Data collected through the website is processed in accordance with our Privacy Policy and applicable legislation (GDPR). Users have rights to access, rectify, and delete their data.">
+        Data collected through the website is processed in accordance with our <a href="/confidentialite.html"
+          class="text-indigo-600 hover:underline" data-i18n="Privacy Policy">Privacy Policy</a> and applicable
+        legislation (GDPR). Users have rights to access, rectify, and delete their data.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold mb-2" data-i18n="6. Cookies">6. Cookies</h2>
+      <p
+        data-i18n="The website uses cookies to improve user experience. You can manage your preferences in your browser settings.">
+        The website uses cookies to improve user experience. You can manage your preferences in your browser settings.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold mb-2" data-i18n="7. Limitation of Liability">7. Limitation of Liability</h2>
+      <p
+        data-i18n="EVIMO cannot be held liable for direct or indirect damages resulting from accessing or using the website.">
+        EVIMO cannot be held liable for direct or indirect damages resulting from accessing or using the website.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold mb-2" data-i18n="8. Applicable Law">8. Applicable Law</h2>
+      <p data-i18n="The website is governed by French law. Any dispute will be brought before the competent courts.">
+        The website is governed by French law. Any dispute will be brought before the competent courts.
+      </p>
+    </section>
+
+    <section>
+      <p class="text-gray-500" data-i18n="Last update: 04/12/2025">Last update: 04/12/2025</p>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white/70 backdrop-blur-sm border-t border-gray-200 mt-16">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
+
+        <!-- Logo + baseline -->
+        <div class="flex flex-col items-start space-y-4 mt-10">
+          <a href="index.html#top" class="flex items-center gap-2">
+            <img src="/asset/image/Logo_Export_EVIMO_PRIMARY-LOGO_COLOR.svg" alt="EVIMO logo" class="h-12 w-auto" />
+          </a>
+        </div>
+
+        <!-- Contact -->
+        <div class="space-y-2 text-gray-700">
+          <h3 class="text-gray-900 font-semibold mb-3">Contact</h3>
+          <p>Station F/ Pi Cube <br>5 Parv. Alan Turning<br>75013 Paris, France</p>
+          <p>Email :
+            <a href="mailto:contact@evimo.com" class="text-indigo-600 hover:underline">
+              contact@evimo.com
+            </a>
+          </p>
+    
+        </div>
+
+        <!-- Liens utiles -->
+        <div class="space-y-2 text-gray-700">
+          <h3 class="text-gray-900 font-semibold mb-3" data-i18n="Useful links">Useful links</h3>
+          <ul class="space-y-1">
+            <li><a href="/confidentialite.html" class="hover:underline" data-i18n="Privacy">Privacy</a></li>
+            <li><a href="/securite.html" class="hover:underline" data-i18n="Security">Security</a></li>
+            <li><a href="/condition.html" class="hover:underline" data-i18n="Terms">Terms</a></li>
+            <li><a href="/mention.html" class="hover:underline" data-i18n="Legal notice">Legal notice</a></li>
+          </ul>
+        </div>
+
+        <!-- Réseaux -->
+        <div class="space-y-4 text-gray-700">
+          <h3 class="text-gray-900 font-semibold mb-3" data-i18n="Follow us">Follow us</h3>
+          <div class="flex items-center gap-4">
+            <a href="https://www.linkedin.com/company/evimo-fr" target="_blank" rel="noopener noreferrer"
+              class="text-gray-700 hover:text-indigo-600 transition">
+              <iconify-icon icon="mdi:linkedin" width="32"></iconify-icon>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright -->
+      <div class="border-t border-gray-200 text-center py-5 text-sm text-gray-500">
+        © <span id="year"></span> EVIMO. All rights reserved.
+      </div>
+
+    </footer>
+
+    <script src="/asset/app.js"></script>
+
+</body>
+
+</html>

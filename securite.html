@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/asset/style.css">
+  <link rel="icon" href="/asset/image/Logo_Export_EVIMO_LOGO-MARK_BLUE.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <title>Sécurité – EVIMO</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</head>
+
+<body class="bg-white text-gray-800">
+
+   <header class="sticky top-0 z-50 bg-transparent h-16 py-4">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+
+      <!-- 🟦 Wrapper avec blur autour du logo -->
+      <div class="backdrop-blur-md bg-white/40 rounded-full px-3 py-1">
+        <a href="index.html" class="flex items-center gap-2 font-semibold text-xl">
+          <img src="/asset/image/Logo_Export_EVIMO_PRIMARY-LOGO_COLOR.svg" alt="EVIMO logo" class="h-8 w-auto" />
+        </a>
+      </div>
+
+      <!-- Navigation -->
+       <nav id="site-nav"
+      class="hidden md:flex items-center gap-8 text-base h-[60px] border border-gray-300/30 rounded-full px-6 py-2 bg-white/60 backdrop-blur-sm transition-[backdrop-filter,background-color,box-shadow] duration-300">
+      <a href="/index.html#product" data-i18n="Product" class="underline-active">Product</a>
+      <a href="/index.html#industries" data-i18n="Industries" class="underline-active">Industries</a>
+      <a href="/index.html#how" data-i18n="How it works" class="underline-active">How it works</a>
+      <a href="/index.html#pilot" data-i18n="Pilot" class="underline-active">Pilot</a>
+      <a href="/index.html#contact" data-i18n="Contact" class="underline-active">Contact</a>
+    </nav>
+
+      <!-- Boutons -->
+       <div class="relative hidden md:flex">
+        <button id="lang-toggle" class="lang-btn" aria-label="Change language">
+          <!-- Drapeau -->
+          <iconify-icon id="lang-flag" icon="twemoji:flag-united-kingdom" width="20">
+          </iconify-icon>
+
+          <!-- Flèche -->
+          <iconify-icon icon="mdi:chevron-down" width="18">
+          </iconify-icon>
+        </button>
+
+        <!-- Dropdown -->
+        <div id="lang-menu"
+          class="absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded-md shadow-lg hidden z-50">
+          <button data-lang="EN" class="flex items-center gap-2 w-full px-4 py-2 hover:bg-gray-100">
+            <iconify-icon icon="twemoji:flag-united-kingdom" width="18"></iconify-icon>
+            English
+          </button>
+
+          <button data-lang="FR" class="flex items-center gap-2 w-full px-4 py-2 hover:bg-gray-100">
+            <iconify-icon icon="twemoji:flag-france" width="18"></iconify-icon>
+            Français
+          </button>
+        </div>
+      </div>
+
+
+      <!-- Boutons desktop -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="/index.html#contact" data-i18n="Talk to us"
+          class="btn-secondary text-base py-4 w-[150px] text-center whitespace-nowrap overflow-hidden">Talk to us</a>
+        <a href="/index.html#company" data-i18n="Book a demo"
+          class="btn-primary text-base py-4 w-[180px] text-center whitespace-nowrap overflow-hidden">Book a demo</a>
+      </div>
+
+      <!-- Burger menu -->
+      <button id="burger" class="md:hidden flex items-center justify-center w-10 h-10 ml-4" aria-label="Open menu">
+        <span class="sr-only">Open menu</span>
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <!-- Mobile menu -->
+ <!-- Mobile menu -->
+<div id="mobile-menu"
+  class="md:hidden hidden absolute top-full right-4 bg-white border border-gray-200 rounded-md shadow-lg z-50 w-60">
+
+  <ul class="flex flex-col px-4 py-6 gap-4 text-base font-medium">
+    <li><a href="/index.html#product" data-i18n="Product" class="block underline-active">Product</a></li>
+    <li><a href="/index.html#industries" data-i18n="Industries" class="block underline-active">Industries</a></li>
+    <li><a href="/index.html#how" data-i18n="How it works" class="block underline-active">How it works</a></li>
+    <li><a href="/index.html#pilot" data-i18n="Pilot" class="block underline-active">Pilot</a></li>
+    <li><a href="/index.html#contact" data-i18n="Contact" class="block underline-active">Contact</a></li>
+    <li class="pt-4 border-t">
+      <div class="relative w-full">
+        <button id="lang-toggle-mobile"
+          class="lang-btn w-full flex items-center justify-between gap-2"
+          aria-label="Change language">
+          <iconify-icon id="lang-flag-mobile" icon="twemoji:flag-united-kingdom" width="20"></iconify-icon>
+          <span id="lang-current-mobile">EN</span>
+          <iconify-icon id="lang-chevron-mobile" icon="mdi:chevron-down" width="18"></iconify-icon>
+        </button>
+
+        <div id="lang-menu-mobile"
+          class="hidden mt-2 w-full bg-white border border-gray-200 rounded-md shadow-lg z-50">
+          <button data-lang="EN" class="w-full text-left px-4 py-2 hover:bg-gray-100">
+            <iconify-icon icon="twemoji:flag-united-kingdom" width="18"></iconify-icon> English
+          </button>
+          <button data-lang="FR" class="w-full text-left px-4 py-2 hover:bg-gray-100">
+            <iconify-icon icon="twemoji:flag-france" width="18"></iconify-icon> Français
+          </button>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <a href="/index.html#contact" data-i18n="Talk to us"
+        class="block underline-active btn-secondary w-full text-center">Talk to us</a>
+    </li>
+    <li>
+      <a href="/index.html#company" data-i18n="Book a demo"
+        class="block underline-active btn-primary w-full text-center">Book a demo</a>
+    </li>
+  </ul>
+</div>
+
+  </header>
+
+  <main class="mx-auto max-w-4xl px-6 lg:px-8 py-12 space-y-8">
+
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 py-6">
+      <h1 class="text-3xl font-bold text-gray-900 text-center" data-i18n="Security – EVIMO">Security – EVIMO</h1>
+    </div>
+
+    <section>
+      <h2 class="text-2xl font-semibold mb-2" data-i18n="1. Data Security">1. Data Security</h2>
+      <p
+        data-i18n="EVIMO implements technical and organizational measures to protect the personal and technical information collected on the website and through our maintenance services. This includes:">
+        EVIMO implements technical and organizational measures to protect the personal and technical information
+        collected on the website and through our maintenance services. This includes:
+      </p>
+      <ul class="list-disc ml-6 space-y-1">
+        <li data-i18n="Encryption of communications via HTTPS">Encryption of communications via HTTPS</li>
+        <li data-i18n="Secure data storage on protected servers">Secure data storage on protected servers</li>
+        <li data-i18n="Regular backups to prevent data loss">Regular backups to prevent data loss</li>
+        <li data-i18n="Strict access control to sensitive information">Strict access control to sensitive information
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold mb-2" data-i18n="2. On-Site Intervention Safety">2. On-Site Intervention Safety
+      </h2>
+      <p
+        data-i18n="Our technicians follow strict procedures to ensure safety during interventions on electric charging stations:">
+        Our technicians follow strict procedures to ensure safety during interventions on electric charging stations:
+      </p>
+      <ul class="list-disc ml-6 space-y-1">
+        <li data-i18n="Use of personal protective equipment (PPE)">Use of personal protective equipment (PPE)</li>
+        <li data-i18n="Compliance with electrical standards and local regulations">Compliance with electrical standards
+          and local regulations</li>
+        <li data-i18n="Verification and testing before putting stations back into service">Verification and testing
+          before putting stations back into service</li>
+        <li data-i18n="Tracking and traceability of maintenance operations">Tracking and traceability of maintenance
+          operations</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold mb-2" data-i18n="3. IT Security and Cyber-Risk Prevention">3. IT Security and
+        Cyber-Risk Prevention</h2>
+      <ul class="list-disc ml-6 space-y-1">
+        <li data-i18n="Internal systems are protected against viruses, malware, and intrusion attempts">Internal systems
+          are protected against viruses, malware, and intrusion attempts</li>
+        <li data-i18n="User accounts have secure passwords and authentication when required">User accounts have secure
+          passwords and authentication when required</li>
+        <li data-i18n="Regular audits and security updates are carried out to maintain system reliability">Regular
+          audits and security updates are carried out to maintain system reliability</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold mb-2" data-i18n="4. Incident Reporting">4. Incident Reporting</h2>
+      <p
+        data-i18n="If you encounter any security issue related to the website or services, you can contact us immediately at:">
+        If you encounter any security issue related to the website or services, you can contact us immediately at:
+      </p>
+      <p>
+        <a href="mailto:contact@evimo.fr" class="text-indigo-600 hover:underline"
+          data-i18n="contact@evimo.fr">contact@evimo.fr</a><br>
+        <span data-i18n="Phone : +33 1 23 45 67 89">Phone : +33 1 23 45 67 89</span>
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold mb-2" data-i18n="5. Liability">5. Liability</h2>
+      <p
+        data-i18n="EVIMO cannot be held responsible for damages resulting from improper use of the website or services, nor for incidents related to external factors beyond our control.">
+        EVIMO cannot be held responsible for damages resulting from improper use of the website or services, nor for
+        incidents related to external factors beyond our control.
+      </p>
+    </section>
+
+    <section>
+      <p class="text-gray-500" data-i18n="Last update:04/12/2025">Last update:04/12/2025</p>
+    </section>
+
+  </main>
+
+
+
+  <!-- Footer -->
+<footer class="bg-white/70 backdrop-blur-sm border-t border-gray-200 mt-16">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
+
+        <!-- Logo + baseline -->
+        <div class="flex flex-col items-start space-y-4 mt-10">
+          <a href="index.html#top" class="flex items-center gap-2">
+            <img src="/asset/image/Logo_Export_EVIMO_PRIMARY-LOGO_COLOR.svg" alt="EVIMO logo" class="h-12 w-auto" />
+          </a>
+        </div>
+
+        <!-- Contact -->
+        <div class="space-y-2 text-gray-700">
+          <h3 class="text-gray-900 font-semibold mb-3">Contact</h3>
+          <p>Station F/ Pi Cube <br>5 Parv. Alan Turning<br>75013 Paris, France</p>
+          <p>Email :
+            <a href="mailto:contact@evimo.com" class="text-indigo-600 hover:underline">
+              contact@evimo.com
+            </a>
+          </p>
+        </div>
+
+        <!-- Liens utiles -->
+        <div class="space-y-2 text-gray-700">
+          <h3 class="text-gray-900 font-semibold mb-3" data-i18n="Useful links">Useful links</h3>
+          <ul class="space-y-1">
+            <li><a href="/confidentialite.html" class="hover:underline" data-i18n="Privacy">Privacy</a></li>
+            <li><a href="/securite.html" class="hover:underline" data-i18n="Security">Security</a></li>
+            <li><a href="/condition.html" class="hover:underline" data-i18n="Terms">Terms</a></li>
+            <li><a href="/mention.html" class="hover:underline" data-i18n="Legal notice">Legal notice</a></li>
+          </ul>
+        </div>
+
+        <!-- Réseaux -->
+        <div class="space-y-4 text-gray-700">
+          <h3 class="text-gray-900 font-semibold mb-3" data-i18n="Follow us">Follow us</h3>
+          <div class="flex items-center gap-4">
+            <a href="https://www.linkedin.com/company/evimo-fr" target="_blank" rel="noopener noreferrer"
+              class="text-gray-700 hover:text-indigo-600 transition">
+              <iconify-icon icon="mdi:linkedin" width="32"></iconify-icon>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright -->
+      <div class="border-t border-gray-200 text-center py-5 text-sm text-gray-500">
+        © <span id="year"></span> EVIMO. All rights reserved.
+      </div>
+
+    </footer>
+
+  <script src="/asset/app.js"></script>
+
+</body>
+
+</html>

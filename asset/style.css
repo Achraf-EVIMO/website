@@ -1,0 +1,510 @@
+/* --- Cartes --- */
+.card {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: default;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px) scale(1.03);
+  cursor: pointer;
+}
+
+.card:focus {
+  outline: 3px solid #0052CC;
+  outline-offset: 3px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px) scale(1.03);
+}
+
+/* Icônes dans les cards */
+.card>div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  background-color: #e0e7ff;
+  color: #1E6DF6;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+/* --- Boutons --- */
+.btn-primary {
+  padding: 0.70rem 1.3rem;
+  background: linear-gradient(to right, #1E6DF6, #4F8BFF);
+  color: white;
+  font-weight: 600;
+  border-radius: 19rem;
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.5),
+    0 4px 6px -2px rgba(99, 102, 241, 0.25);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  user-select: none;
+  text-decoration: none;
+  line-height: 1.25rem;
+  font-size: 0.875rem;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to right, #1E6DF6, #4F8BFF);
+  transform: scale(1.05);
+  box-shadow: 0 12px 17px -4px rgba(37, 99, 235, 0.7),
+    0 6px 8px -3px rgba(79, 70, 229, 0.4);
+}
+
+.btn-primary:focus {
+  outline: 3px solid rgba(59, 130, 246, 0.5);
+  outline-offset: 2px;
+}
+
+/* Bouton secondaire */
+.btn-secondary {
+  padding: 0.70rem 1.3rem;
+  background: white;
+  color: #1E6DF6;
+  font-weight: 500;
+  border-radius: 19rem;
+  border: 1px solid #1E6DF6;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  user-select: none;
+  text-decoration: none;
+  line-height: 1.25rem;
+  font-size: 0.875rem;
+}
+
+.btn-secondary:hover {
+  background: #f9fafb;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.btn-secondary:focus {
+  outline: 3px solid rgba(209, 213, 219, 0.5);
+  outline-offset: 2px;
+}
+
+iconify-icon {
+  color: black !important;
+}
+
+/* Scroll personnalisé */
+#feature-text {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+}
+
+#feature-text::-webkit-scrollbar {
+  width: 6px;
+}
+
+#feature-text::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+}
+
+#feature-text::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* --- Ligne + Points animés (How it works) --- */
+.animated-line {
+  position: relative;
+  height: 4px;
+  background-color: #9ca3af;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.line-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: #1E6DF6;
+  transition: none;
+}
+
+
+/* Points */
+.animated-dot {
+  background-color: #fff;
+  border: 2px solid #9ca3af;
+  transition: background-color 0.4s ease, border-color 0.4s ease, transform 0.3s ease;
+}
+
+.animated-dot.animate {
+  background-color: #1E6DF6;
+  border-color: #1E6DF6;
+  transform: scale(1.2);
+}
+
+section ul li {
+  display: flex;
+  align-items: center;
+}
+
+section ul li .iconify {
+  color: #1E6DF6;
+  /* couleur bleu EVIMO */
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.align-list {
+  display: flex;
+  align-items: center;
+}
+
+.align-list>span.iconify {
+  flex-shrink: 0;
+  /* pour que l’icône ne se compresse pas */
+  margin-right: 0.5rem;
+  /* espace entre icône et texte */
+}
+
+/* --- Bouton Langue (globe) --- */
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: white;
+  color: #1E6DF6;
+  border: 1px solid #1E6DF6;
+  padding: 0.5rem 1rem;
+  border-radius: 19rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.lang-btn:hover {
+  background: #f3f6ff;
+  transform: translateY(-2px);
+}
+
+.lang-btn:focus {
+  outline: 3px solid rgba(59,130,246,0.5);
+  outline-offset: 2px;
+}
+
+.lang-btn iconify-icon {
+  color: #1E6DF6 !important;
+}
+
+body {
+  font-family: "marope", sans-serif;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px) scale(1.03);
+  }
+
+  .btn-primary:hover {
+    transform: scale(1.05);
+  }
+
+  .btn-secondary:hover {
+    transform: translateY(-2px);
+  }
+
+  .lang-btn:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+    transform: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.9rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .animated-line {
+    height: 3px;
+  }
+
+  .animated-dot {
+    transform: scale(0.9);
+  }
+}
+
+@media (max-width: 768px) {
+  #feature-text {
+    scrollbar-width: auto;
+  }
+
+  #feature-text::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+/* ============================= */
+/* HOW IT WORKS — VERTICAL ≤ 1200px */
+@media (max-width: 1200px) {
+  /* Centrer la section au milieu de la page */
+  #how {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 100vh !important;
+  }
+
+  /* Conteneur */
+  #how .relative.mt-20 {
+    position: relative;
+  }
+
+  /* Grille en colonne verticale */
+  #how ol {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    position: relative;
+    padding: 0;
+  }
+
+  /* Ligne verticale - positionnée au centre des points */
+  #how .animated-line {
+    display: block !important;
+    position: absolute !important;
+    left: 38px !important;           /* 30px (translateX du point) + 8px (centre du point 16px) */
+    transform: translateX(-50%) !important;
+    top: 3rem !important;
+    bottom: auto !important;
+    width: 2px !important;
+    height: calc(100% - 6rem) !important;
+    background-color: #d1d5db !important;
+    border-radius: 0 !important;
+    z-index: 0 !important;           /* derrière les points */
+    overflow: visible !important;
+  }
+
+  /* Remplissage animé vertical */
+  #how .line-fill {
+    position: absolute !important;
+    left: 0 !important;
+    width: 100% !important;
+    background-color: #1E6DF6 !important;
+    border-radius: 0 !important;
+    z-index: 0 !important;
+  }
+
+  /* Chaque étape */
+  #how li {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+    z-index: 1 !important;
+  }
+
+  /* Points - restent dans leur position sans être déplacés */
+  #how .animated-dot {
+    position: relative !important;
+    z-index: 2 !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Texte décalé vers la droite */
+  #how li > div:not(.animated-dot) {
+    padding-left: 5rem !important;
+  }
+
+  /* Force le deuxième point à rester aligné */
+  #how li:nth-child(2) {
+    padding-left: 0 !important;
+  }
+
+  #how li:nth-child(2) .animated-dot {
+    top: auto !important;
+  }
+}
+
+
+/* Mobile menu hidden by default */
+#mobile-menu {
+  display: none;
+  flex-direction: column;
+}
+
+#mobile-menu.active {
+  display: flex;
+}
+
+
+/* Bouton langue sans bordure */
+#lang-toggle {
+  border: none;
+  background: white;
+}
+
+/* Flèche animée */
+#lang-toggle iconify-icon:last-child {
+  transition: transform 0.3s ease;
+}
+
+#lang-toggle.menu-open iconify-icon:last-child {
+  transform: rotate(180deg); /* flèche vers le haut */
+}
+
+/* Dropdown placé sous le bouton */
+#lang-menu {
+  position: absolute;
+  top: 100%; /* juste en-dessous */
+  right: 0;
+  margin-top: 0.25rem; /* petit espace */
+  z-index: 50;
+  width: 8rem;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: none; /* caché par défaut */
+}
+
+#lang-menu.show {
+  display: block;
+}
+
+/* Mobile lang button identique au desktop */
+.lang-btn {
+  border: none;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  border-radius: 19rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  width: 100%;
+}
+
+/* Flèche animée */
+.lang-btn.menu-open iconify-icon:last-child {
+  transform: rotate(180deg);
+}
+
+/* Dropdown sous le bouton */
+#lang-menu-mobile {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.25rem;
+  width: 100%;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: none;
+  z-index: 50;
+}
+
+#lang-menu-mobile.active {
+  display: block;
+}
+
+/* Navigation desktop visible seulement au-dessus de 900px */
+/* Desktop nav + boutons + langue visibles par défaut */
+#site-nav,
+header .md\:flex.items-center.gap-3, /* boutons */
+.relative.hidden.md\:flex { /* wrapper bouton langue */
+  display: flex;
+}
+
+/* Burger caché par défaut */
+#burger {
+  display: none;
+}
+
+/* Mobile : écran ≤ 900px */
+@media (max-width: 1200px) {
+  /* cache nav + boutons + langue */
+  #site-nav,
+  header .md\:flex.items-center.gap-3,
+  .relative.hidden.md\:flex {
+    display: none !important; /* forcer la disparition */
+  }
+
+  /* affiche le burger */
+  #burger {
+    display: flex;
+  }
+}
+
+/* Pour les écrans ≤ 1024px (tablette et mobile) */
+@media (max-width: 1024px) {
+  #industries .relative.flex.flex-col.items-start {
+    padding-left: 1.5rem !important; /* réduit l'espace à gauche */
+    padding-right: 1.5rem !important; /* réduit l'espace à droite */
+  }
+
+  #industries .relative.flex.flex-col.items-start h3,
+  #industries .relative.flex.flex-col.items-start ul {
+    max-width: 100%; /* texte limité à la largeur du conteneur */
+    word-break: break-word; /* évite que les mots longs débordent */
+  }
+
+  /* Ajuste l'image de fond si nécessaire */
+  #industries .relative.flex.flex-col.items-start .absolute.w-3\/4 {
+    width: 100%; /* l'image prend toute la largeur du conteneur */
+  }
+}
+
+.underline-active {
+  position: relative;
+  text-decoration: none;
+  color: #111827;
+  transition: color 0.3s;
+}
+
+.underline-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: #3b82f6;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1s ease;
+}
+
+.underline-active:hover::after {
+  transform: scaleX(1);
+}
+
+.underline-active.active::after {
+  transform: scaleX(1);
+}
