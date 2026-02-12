@@ -64,17 +64,17 @@ document.addEventListener("DOMContentLoaded", function () {
   // ✅ Fonction pour mettre à jour les couleurs du texte
   function updateFeatureColors(activeIndex) {
     features.forEach((feature, i) => {
-      const h3 = feature.querySelector("h3");
+      const h2 = feature.querySelector("h2");
       const p = feature.querySelector("p");
 
       if (i === activeIndex) {
-        h3.classList.remove("text-gray-400");
-        h3.classList.add("text-black");
+        h2.classList.remove("text-gray-400");
+        h2.classList.add("text-black");
         p.classList.remove("text-gray-400");
         p.classList.add("text-gray-500");
       } else {
-        h3.classList.remove("text-black");
-        h3.classList.add("text-gray-400");
+        h2.classList.remove("text-black");
+        h2.classList.add("text-gray-400");
         p.classList.remove("text-gray-500");
         p.classList.add("text-gray-400");
       }
@@ -457,10 +457,8 @@ const translations = {
   "Withdraw your consent at any time":
     "Retirer votre consentement à tout moment",
   "9. Contact": "9. Contact",
-  "For any questions regarding your data or this policy, contact us at:":
-    "Pour toute question concernant vos données ou cette politique, contactez-nous à :",
-  "[contact@evimo.fr](mailto:contact@evimo.fr)":
-    "[contact@evimo.fr](mailto:contact@evimo.fr)",
+  "For any questions regarding your data or this policy, contact us at: contact@evimo.fr":
+    "Pour toute question concernant vos données ou cette politique, contactez-nous à : contact@evimo.fr",
   "10. Policy Updates": "10. Mises à jour de la politique",
   "This policy may be updated periodically. The latest update will be indicated below.":
     "Cette politique peut être mise à jour périodiquement. La dernière mise à jour sera indiquée ci-dessous.",
@@ -498,13 +496,12 @@ const translations = {
   "Regular audits and security updates are carried out to maintain system reliability":
     "Des audits réguliers et des mises à jour de sécurité sont réalisés pour maintenir la fiabilité du système",
   "4. Incident Reporting": "4. Signalement d’incidents",
-  "If you encounter any security issue related to the website or services, you can contact us immediately at:":
-    "Si vous rencontrez un problème de sécurité lié au site ou aux services, vous pouvez nous contacter immédiatement à :",
-  "Phone : +33 1 23 45 67 89": "Téléphone : +33 1 23 45 67 89",
+  "If you encounter any security issue related to the website or services, you can contact us immediately at: contact@evimo.fr":
+    "Si vous rencontrez un problème de sécurité lié au site ou aux services, vous pouvez nous contacter immédiatement à : contact@evimo.fr",
   "5. Liability": "5. Responsabilité",
   "EVIMO cannot be held responsible for damages resulting from improper use of the website or services, nor for incidents related to external factors beyond our control.":
     "EVIMO ne peut être tenu responsable des dommages résultant d’une utilisation incorrecte du site ou des services, ni des incidents liés à des facteurs externes échappant à notre contrôle.",
-  "Last update: 12/02/2025": "Dernière mise à jour : 12/02/2025",
+  "Last update: 04/12/2025": "Dernière mise à jour : 04/12/2025",
   // Page Terms of Use
   "Terms of Use – EVIMO": "Conditions d'utilisation – EVIMO",
   "1. Acceptance of the Terms": "1. Acceptation des conditions",
@@ -536,8 +533,8 @@ const translations = {
   "We strive to provide accurate information, but we do not guarantee the accuracy, completeness, or continuous availability of the services":
     "Nous nous efforçons de fournir des informations exactes, mais nous ne garantissons pas l’exactitude, l’exhaustivité ou la disponibilité continue des services",
   "7. Privacy and Personal Data": "7. Confidentialité et données personnelles",
-  "The use of our services is subject to our politique-confidentialite.html":
-    "L’utilisation de nos services est soumise à notre politique-confidentialite.html",
+  "The use of our services is subject to our Privacy Policy":
+    "L’utilisation de nos services est soumise à notre politique de confidentialité",
   "Privacy Policy": "Politique de confidentialité",
   "which explains how we collect, use, and protect your personal data.":
     "qui explique comment nous collectons, utilisons et protégeons vos données personnelles.",
@@ -545,12 +542,12 @@ const translations = {
   "We may modify these terms at any time. Changes take effect upon publication on the site. Continued use of the site constitutes acceptance of the new terms.":
     "Nous pouvons modifier ces conditions à tout moment. Les changements prennent effet dès leur publication sur le site. L’utilisation continue du site constitue l’acceptation des nouvelles conditions.",
   "9. Governing Law and Jurisdiction": "9. Droit applicable et juridiction",
-  "These terms are governed by French law. Any dispute will be submitted to the jurisdiction of the competent courts of [city or region].":
-    "Ces conditions sont régies par le droit français. Tout litige sera soumis à la compétence des tribunaux compétents de [ville ou région].",
+  "These terms are governed by French law. Any dispute will be submitted to the jurisdiction of the competent courts of Paris.":
+    "Ces conditions sont régies par le droit français. Tout litige sera soumis à la compétence des tribunaux compétents de Paris.",
   "10. Contact": "10. Contact",
-  "For any questions regarding these terms, contact us at: mailto:contact@evimo.com 123 Rue de l’Innovation 75001 Paris, France":
-    "Pour toute question concernant ces conditions, contactez-nous à : mailto:contact@evimo.com 123 Rue de l’Innovation 75001 Paris, France",
-  "Last update: 12/02/2025": "Dernière mise à jour : 12/02/2025",
+  "For any questions regarding these terms, contact us at: contact@evimo.com 123 Rue de l’Innovation 75001 Paris, France":
+    "Pour toute question concernant ces conditions, contactez-nous à : contact@evimo.com 123 Rue de l’Innovation 75001 Paris, France",
+  "Last update: 04/12/2025": "Dernière mise à jour : 04/12/2025",
   // Page Legal Notice
   "Legal Notice – EVIMO": "Mentions légales – EVIMO",
 
@@ -601,7 +598,7 @@ const translations = {
   "The website is governed by French law. Any dispute will be brought before the competent courts.":
     "Le site est soumis au droit français. Tout litige sera porté devant les tribunaux compétents.",
 
-  "Last update: 12/02/2025": "Dernière mise à jour : 12/02/2025",
+  "Last update: 04/12/2025": "Dernière mise à jour : 04/12/2025",
 };
 
 // Fonction pour basculer la langue
@@ -685,44 +682,189 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// -----------------------------
-// Burger menu toggle
+// ===========================
+// MENU LANGUE DESKTOP
+// ===========================
+
+document.addEventListener("DOMContentLoaded", () => {
+  const langToggle = document.getElementById("lang-toggle");
+  const langMenu = document.getElementById("lang-menu");
+  const langFlag = document.getElementById("lang-flag");
+
+  if (langToggle && langMenu) {
+    // S'assurer que le menu est fermé au chargement
+    langMenu.classList.remove("show");
+
+    // Fonction pour mettre à jour le drapeau desktop
+    function updateDesktopLangFlag(lang) {
+      langFlag.setAttribute(
+        "icon",
+        lang === "FR" ? "twemoji:flag-france" : "twemoji:flag-united-kingdom"
+      );
+    }
+
+    // Toggle du menu langue desktop
+    langToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = langMenu.classList.toggle("show");
+      langToggle.classList.toggle("menu-open", isOpen);
+    });
+
+    // Sélection d'une langue desktop
+    langMenu.querySelectorAll("button[data-lang]").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const lang = btn.dataset.lang.toUpperCase();
+        
+        // Appeler votre fonction setLanguage() existante
+        if (typeof setLanguage === 'function') {
+          setLanguage(lang);
+        }
+        
+        // Mettre à jour l'affichage
+        updateDesktopLangFlag(lang);
+        
+        // Sauvegarder dans localStorage
+        localStorage.setItem("lang", lang);
+        
+        // Fermer le menu
+        langMenu.classList.remove("show");
+        langToggle.classList.remove("menu-open");
+      });
+    });
+
+    // Fermer si on clique ailleurs
+    document.addEventListener("click", () => {
+      langMenu.classList.remove("show");
+      langToggle.classList.remove("menu-open");
+    });
+
+    // Empêcher la fermeture au clic sur le menu
+    langMenu.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+
+    // Initialiser avec la langue sauvegardée
+    const savedLang = localStorage.getItem("lang") || "EN";
+    updateDesktopLangFlag(savedLang);
+  }
+});
+
+// ===========================
+// MENU BURGER GRAND FORMAT
+// ===========================
+
+// Éléments DOM
 const burger = document.getElementById("burger");
 const mobileMenu = document.getElementById("mobile-menu");
+const mobileCard = document.getElementById("mobile-card");
+const closeMenuBtn = document.getElementById("close-menu");
+const headerLogo = document.getElementById("header-logo");
+const headerLogoMobile = document.getElementById("header-logo-mobile");
+const body = document.body;
 
+// Fonction pour ouvrir le menu
+function openMenu() {
+  burger.classList.add("active");
+  mobileMenu.classList.add("active");
+  body.classList.add("menu-open");
+}
+
+// Fonction pour fermer le menu
+function closeMenu() {
+  mobileMenu.classList.remove("active");
+  burger.classList.remove("active");
+  body.classList.remove("menu-open");
+}
+
+// Ouvrir le menu avec le burger
 burger.addEventListener("click", (e) => {
   e.stopPropagation();
-  mobileMenu.classList.toggle("active");
+  openMenu();
 });
 
-document.addEventListener("click", () => {
-  mobileMenu.classList.remove("active");
+// Fermer avec le bouton croix DANS la card
+closeMenuBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  closeMenu();
 });
 
-mobileMenu.addEventListener("click", (e) => e.stopPropagation());
+// Clic sur le logo du header (celui du haut) ferme le menu
+headerLogo.addEventListener("click", (e) => {
+  if (mobileMenu.classList.contains("active")) {
+    e.preventDefault();
+    closeMenu();
+    // Après fermeture, faire le scroll
+    setTimeout(() => {
+      window.location.href = "#top";
+    }, 300);
+  }
+});
 
-// -----------------------------
-// Langue dans le burger
-// -----------------------------
+// Clic sur le logo DANS la card ferme également
+headerLogoMobile.addEventListener("click", (e) => {
+  e.preventDefault();
+  closeMenu();
+  setTimeout(() => {
+    window.location.href = "#top";
+  }, 300);
+});
+
+// Empêcher la fermeture au clic dans la card
+mobileCard.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+
+// Fermer le menu au clic sur un lien de navigation
+mobileMenu.querySelectorAll("a[href^='#']").forEach(link => {
+  link.addEventListener("click", () => {
+    closeMenu();
+  });
+});
+
+// ===========================
+// MENU LANGUE MOBILE
+// ===========================
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Références
+  
   const burgerLangToggle = document.getElementById("lang-toggle-mobile");
   const burgerLangMenu = document.getElementById("lang-menu-mobile");
   const burgerLangChevron = document.getElementById("lang-chevron-mobile");
   const burgerLangFlag = document.getElementById("lang-flag-mobile");
   const burgerLangCurrent = document.getElementById("lang-current-mobile");
 
-  // Met à jour drapeau + texte
+  // S'assurer que le menu langue est fermé au chargement
+  burgerLangMenu.classList.remove("active");
+  burgerLangMenu.classList.add("lang-menu-mobile-hidden");
+  burgerLangChevron.style.transform = "rotate(0deg)";
+
+  // Fonction pour mettre à jour le drapeau
   function updateBurgerLangFlag(lang) {
-    burgerLangFlag.setAttribute("icon", lang === "FR" ? "twemoji:flag-france" : "twemoji:flag-united-kingdom");
+    burgerLangFlag.setAttribute(
+      "icon",
+      lang === "FR" ? "twemoji:flag-france" : "twemoji:flag-united-kingdom"
+    );
     burgerLangCurrent.textContent = lang;
   }
 
-  // Ouvre/ferme le menu mobile langue
+  // Toggle du menu langue
   burgerLangToggle.addEventListener("click", (e) => {
     e.stopPropagation();
-    const isOpen = burgerLangMenu.classList.toggle("active");
-    burgerLangChevron.setAttribute("icon", isOpen ? "mdi:chevron-up" : "mdi:chevron-down");
+    
+    const isCurrentlyOpen = burgerLangMenu.classList.contains("active");
+    
+    if (isCurrentlyOpen) {
+      // Fermer
+      burgerLangMenu.classList.remove("active");
+      burgerLangMenu.classList.add("lang-menu-mobile-hidden");
+      burgerLangChevron.style.transform = "rotate(0deg)";
+    } else {
+      // Ouvrir
+      burgerLangMenu.classList.remove("lang-menu-mobile-hidden");
+      burgerLangMenu.classList.add("active");
+      burgerLangChevron.style.transform = "rotate(180deg)";
+    }
   });
 
   // Sélection d'une langue
@@ -730,18 +872,45 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", (e) => {
       e.stopPropagation();
       const lang = btn.dataset.lang.toUpperCase();
-      setLanguage(lang);           // même fonction que pour la nav
-      updateBurgerLangFlag(lang);  // met à jour drapeau + texte
+      
+      // Appeler votre fonction setLanguage() existante
+      if (typeof setLanguage === 'function') {
+        setLanguage(lang);
+      }
+      
+      // Mettre à jour l'affichage
+      updateBurgerLangFlag(lang);
+      
+      // Sauvegarder dans localStorage
+      localStorage.setItem("lang", lang);
+      
+      // Fermer le menu langue
       burgerLangMenu.classList.remove("active");
-      burgerLangChevron.setAttribute("icon", "mdi:chevron-down");
+      burgerLangMenu.classList.add("lang-menu-mobile-hidden");
+      burgerLangChevron.style.transform = "rotate(0deg)";
     });
   });
 
-  // Initialisation à la langue sauvegardée
+  // Fermer le menu langue si on clique ailleurs dans la card
+  mobileCard.addEventListener("click", (e) => {
+    if (!burgerLangToggle.contains(e.target) && !burgerLangMenu.contains(e.target)) {
+      if (burgerLangMenu.classList.contains("active")) {
+        burgerLangMenu.classList.remove("active");
+        burgerLangMenu.classList.add("lang-menu-mobile-hidden");
+        burgerLangChevron.style.transform = "rotate(0deg)";
+      }
+    }
+  });
+
+  // Initialiser avec la langue sauvegardée (SANS ouvrir le menu)
   const savedLang = localStorage.getItem("lang") || "EN";
   updateBurgerLangFlag(savedLang);
+  
+  // Synchroniser avec setLanguage au chargement
+  if (typeof setLanguage === 'function') {
+    setLanguage(savedLang);
+  }
 });
-
 // ======================
 // ANIMATION navigation 
 // ======================
@@ -841,3 +1010,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+

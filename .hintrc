@@ -6,6 +6,7 @@
     "no-inline-styles": "off",
     "compat-api/css": "off",
     "axe/text-alternatives": "off",
-    "axe/name-role-value": "off"
+    "axe/name-role-value": "off",
+    "css-prefix-order": "off"
   }
 }

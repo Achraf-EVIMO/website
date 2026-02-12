@@ -69,21 +69,18 @@
 /* Bouton secondaire */
 .btn-secondary {
   padding: 0.70rem 1.3rem;
-  background: white;
+  background: rgba(255, 255, 255, 0.375); /* fond semi-transparent */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari */
+  
   color: #1E6DF6;
   font-weight: 500;
   border-radius: 19rem;
-  border: 1px solid #1E6DF6;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  outline: none;
+  border: 1px solid rgba(30, 109, 246, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  
+  transition: all 0.3s ease;
   cursor: pointer;
-  display: inline-block;
-  text-align: center;
-  user-select: none;
-  text-decoration: none;
-  line-height: 1.25rem;
-  font-size: 0.875rem;
 }
 
 .btn-secondary:hover {
@@ -93,7 +90,7 @@
 }
 
 .btn-secondary:focus {
-  outline: 3px solid rgba(209, 213, 219, 0.5);
+  outline: 3px solid rgba(209, 213, 219, 0.20305);
   outline-offset: 2px;
 }
 
@@ -145,6 +142,7 @@ iconify-icon {
   background-color: #fff;
   border: 2px solid #9ca3af;
   transition: background-color 0.4s ease, border-color 0.4s ease, transform 0.3s ease;
+  
 }
 
 .animated-dot.animate {
@@ -172,7 +170,7 @@ section ul li .iconify {
 
 .align-list>span.iconify {
   flex-shrink: 0;
-  /* pour que l’icône ne se compresse pas */
+  /* pour que l'icône ne se compresse pas */
   margin-right: 0.5rem;
   /* espace entre icône et texte */
 }
@@ -209,7 +207,7 @@ section ul li .iconify {
 }
 
 body {
-  font-family: "marope", sans-serif;
+  font-family: "manrope", sans-serif;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -278,14 +276,26 @@ body {
   }
 
   /* Conteneur */
+  #how .mx-auto.max-w-7xl {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
   #how .relative.mt-20 {
     position: relative;
+    width: fit-content;
+    max-width: 90%;
   }
 
   /* Grille en colonne verticale */
   #how ol {
     display: flex;
     flex-direction: column;
+    align-items: center !important;
+    justify-content: center !important;
     gap: 3rem;
     position: relative;
     padding: 0;
@@ -362,108 +372,8 @@ body {
   display: flex;
 }
 
-
-/* Bouton langue sans bordure */
-#lang-toggle {
-  border: none;
-  background: white;
-}
-
-/* Flèche animée */
-#lang-toggle iconify-icon:last-child {
-  transition: transform 0.3s ease;
-}
-
-#lang-toggle.menu-open iconify-icon:last-child {
-  transform: rotate(180deg); /* flèche vers le haut */
-}
-
-/* Dropdown placé sous le bouton */
-#lang-menu {
-  position: absolute;
-  top: 100%; /* juste en-dessous */
-  right: 0;
-  margin-top: 0.25rem; /* petit espace */
-  z-index: 50;
-  width: 8rem;
-  background: white;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  display: none; /* caché par défaut */
-}
-
-#lang-menu.show {
-  display: block;
-}
-
-/* Mobile lang button identique au desktop */
-.lang-btn {
-  border: none;
-  background: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 1rem;
-  border-radius: 19rem;
-  cursor: pointer;
-  font-size: 0.875rem;
-  font-weight: 500;
-  width: 100%;
-}
-
-/* Flèche animée */
-.lang-btn.menu-open iconify-icon:last-child {
-  transform: rotate(180deg);
-}
-
-/* Dropdown sous le bouton */
-#lang-menu-mobile {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  margin-top: 0.25rem;
-  width: 100%;
-  background: white;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  display: none;
-  z-index: 50;
-}
-
-#lang-menu-mobile.active {
-  display: block;
-}
-
-/* Navigation desktop visible seulement au-dessus de 900px */
-/* Desktop nav + boutons + langue visibles par défaut */
-#site-nav,
-header .md\:flex.items-center.gap-3, /* boutons */
-.relative.hidden.md\:flex { /* wrapper bouton langue */
-  display: flex;
-}
-
-/* Burger caché par défaut */
-#burger {
-  display: none;
-}
-
-/* Mobile : écran ≤ 900px */
-@media (max-width: 1200px) {
-  /* cache nav + boutons + langue */
-  #site-nav,
-  header .md\:flex.items-center.gap-3,
-  .relative.hidden.md\:flex {
-    display: none !important; /* forcer la disparition */
-  }
-
-  /* affiche le burger */
-  #burger {
-    display: flex;
-  }
-}
-
 /* Pour les écrans ≤ 1024px (tablette et mobile) */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   #industries .relative.flex.flex-col.items-start {
     padding-left: 1.5rem !important; /* réduit l'espace à gauche */
     padding-right: 1.5rem !important; /* réduit l'espace à droite */
@@ -478,8 +388,14 @@ header .md\:flex.items-center.gap-3, /* boutons */
   /* Ajuste l'image de fond si nécessaire */
   #industries .relative.flex.flex-col.items-start .absolute.w-3\/4 {
     width: 100%; /* l'image prend toute la largeur du conteneur */
+    
+  }
+
+  #industries .relative.flex.flex-col.items-start .absolute.w-3\/4 img {
+    width: 100%;
   }
 }
+
 
 .underline-active {
   position: relative;
@@ -507,4 +423,222 @@ header .md\:flex.items-center.gap-3, /* boutons */
 
 .underline-active.active::after {
   transform: scaleX(1);
+}
+
+/* ===========================
+   MENU BURGER GRAND FORMAT
+   =========================== */
+
+/* Mobile menu hidden by default */
+#mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+}
+
+#mobile-menu.active {
+  display: flex;
+}
+
+/* Card grand format - presque 100vh */
+#mobile-card {
+  background-color: #0a1f3f;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  width: calc(100% - 2rem);
+  height: calc(100vh - 2rem);
+  max-height: calc(100vh - 2rem);
+  margin: 1rem;
+}
+
+/* Pas d'overlay ni de flou */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* ===========================
+   LANGUE DESKTOP
+   =========================== */
+
+/* Bouton langue sans bordure */
+#lang-toggle {
+  border: none;
+  background: white;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Flèche animée */
+#lang-toggle iconify-icon:last-child {
+  transition: transform 0.3s ease;
+}
+
+#lang-toggle.menu-open iconify-icon:last-child {
+  transform: rotate(180deg);
+}
+
+/* Dropdown desktop */
+#lang-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.25rem;
+  z-index: 50;
+  width: 8rem;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: none;
+}
+
+#lang-menu.show {
+  display: block;
+}
+
+/* ===========================
+   LANGUE MOBILE
+   =========================== */
+
+/* Dropdown mobile - FERMÉ PAR DÉFAUT */
+#lang-menu-mobile {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  display: none;
+  z-index: 50;
+  overflow: hidden;
+}
+
+/* État fermé par défaut */
+#lang-menu-mobile.lang-menu-mobile-hidden {
+  display: none;
+}
+
+/* État ouvert */
+#lang-menu-mobile.active {
+  display: block;
+}
+
+/* ===========================
+   BURGER ANIMATION
+   =========================== */
+
+/* Animation burger → croix symétrique */
+#burger .burger-line:nth-child(1) {
+  transform: translateY(-7px);
+}
+
+#burger .burger-line:nth-child(2) {
+  transform: translateY(0);
+}
+
+#burger .burger-line:nth-child(3) {
+  transform: translateY(7px);
+}
+
+#burger.active .burger-line:nth-child(1) {
+  transform: translateY(0) rotate(45deg);
+}
+
+#burger.active .burger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+#burger.active .burger-line:nth-child(3) {
+  transform: translateY(0) rotate(-45deg);
+}
+
+/* ===========================
+   BREAKPOINTS RESPONSIVE
+   =========================== */
+
+/* Breakpoint custom à 1200px */
+@media (min-width: 1201px) {
+  .xl-custom\:hidden { 
+    display: none !important; 
+  }
+  .xl-custom\:flex { 
+    display: flex !important; 
+  }
+  .xl-custom\:backdrop-blur-0 { 
+    backdrop-filter: none !important; 
+  }
+  .xl-custom\:bg-transparent { 
+    background-color: transparent !important; 
+  }
+  .xl-custom\:rounded-none { 
+    border-radius: 0 !important; 
+  }
+  .xl-custom\:px-0 { 
+    padding-left: 0 !important; 
+    padding-right: 0 !important; 
+  }
+  .xl-custom\:py-0 { 
+    padding-top: 0 !important; 
+    padding-bottom: 0 !important; 
+  }
+}
+
+@media (max-width: 1200px) {
+  .xl-custom\:justify-center { 
+    justify-content: center !important; 
+  }
+  .xl-custom\:backdrop-blur-md { 
+    backdrop-filter: blur(12px) !important; 
+  }
+  .xl-custom\:bg-white\/40 { 
+    background-color: rgba(255, 255, 255, 0.4) !important; 
+  }
+  .xl-custom\:rounded-full { 
+    border-radius: 9999px !important; 
+  }
+  .xl-custom\:px-3 { 
+    padding-left: 0.75rem !important; 
+    padding-right: 0.75rem !important; 
+  }
+  .xl-custom\:py-1 { 
+    padding-top: 0.25rem !important; 
+    padding-bottom: 0.25rem !important; 
+  }
+}
+
+/* Responsive */
+#site-nav,
+header .md\:flex.items-center.gap-3,
+.relative.hidden.md\:flex {
+  display: flex;
+}
+
+#burger {
+  display: none;
+}
+
+/* Mobile : écran ≤ 1200px */
+@media (max-width: 1200px) {
+  /* cache nav + boutons + langue */
+  #site-nav,
+  header .md\:flex.items-center.gap-3,
+  .relative.hidden.md\:flex {
+    display: none !important;
+  }
+  
+  /* affiche le burger */
+  #burger {
+    display: flex;
+  }
 }

@@ -4,13 +4,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title data-i18n="EVIMO — The AI assistant for maintenance operations">EVIMO — The AI assistant for maintenance
-    operations</title>
+  <title data-i18n="EVIMO — The AI assistant for maintenance operations">EVIMO — The AI assistant for maintenance operations</title>
   <meta name="description"
     content="EVIMO One helps infrastructure operators maximize uptime and cut OPEX with native-AI diagnostics, predictive maintenance, and workflow automation.">
   <link rel="icon" href="/asset/image/Logo_Export_EVIMO_LOGO-MARK_BLUE.svg">
 
   <link rel="stylesheet" href="/asset/style.css">
+  <link rel="stylesheet" href="/asset/pages.css">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
 
@@ -21,54 +21,54 @@
 
 </head>
 
-<body class="min-h-screen text-gray-900">
+<body class="min-h-screen text-gray-900 m-0 p-0">
 
-  <header class="sticky top-0 z-50 bg-transparent h-16 py-4">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-[70] bg-transparent h-16 py-4">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between xl-custom:justify-center">
 
-      <!-- 🟦 Wrapper logo + burger (flexbox: logo à gauche, burger à droite) -->
-      <div class="flex items-center justify-between w-full  gap-4">
-        <!-- Logo avec blur -->
-        <div class="backdrop-blur-md bg-white/40 rounded-full px-3 py-1">
-          <a href="#top" class="flex items-center gap-2 font-semibold text-xl">
+      <!-- 🟦 Wrapper logo + burger - TOUJOURS VISIBLE -->
+      <div class="flex items-center gap-4 backdrop-blur-md bg-white/40 rounded-full px-3 py-1 xl-custom:backdrop-blur-md xl-custom:bg-white/40 xl-custom:rounded-full xl-custom:px-3 xl-custom:py-1 relative z-[90]">
+        
+        <!-- Logo -->
+        <div class="xl-custom:backdrop-blur-0 xl-custom:bg-transparent xl-custom:rounded-none xl-custom:px-0 xl-custom:py-0">
+          <a href="#top" id="header-logo" class="flex items-center gap-2 font-semibold text-xl">
             <img src="/asset/image/Logo_Export_EVIMO_PRIMARY-LOGO_COLOR.svg" alt="EVIMO logo" class="h-8 w-auto" />
           </a>
         </div>
 
-        <!-- Burger menu (mobile uniquement) -->
-        <button id="burger" class="md:hidden flex items-center justify-center w-10 h-10" aria-label="Open menu">
-          <span class="sr-only">Open menu</span>
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
+        <!-- Séparateur vertical -->
+        <div class="xl-custom:hidden w-px h-6 bg-gray-300/50"></div>
+
+        <!-- Burger menu -->
+        <button id="burger" class="xl-custom:hidden flex items-center justify-center w-10 h-10" aria-label="Toggle menu">
+          <span class="sr-only">Toggle menu</span>
+          <div class="burger-icon w-6 h-6 flex items-center justify-center relative">
+            <span class="burger-line absolute w-full h-[2px] bg-current transition-all duration-300 rounded-full"></span>
+            <span class="burger-line absolute w-full h-[2px] bg-current transition-all duration-300 rounded-full"></span>
+            <span class="burger-line absolute w-full h-[2px] bg-current transition-all duration-300 rounded-full"></span>
+          </div>
         </button>
       </div>
 
       <!-- Navigation desktop -->
-     <nav id="site-nav"
-    class="hidden md:flex items-center gap-8 text-base h-[60px] border border-gray-300/30 rounded-full px-6 py-2 bg-white/60 backdrop-blur-sm transition-[backdrop-filter,background-color,box-shadow] duration-300 whitespace-nowrap w-800">
-    <a href="#product" data-i18n="Product" class="underline-active">Product</a>
-    <a href="#industries" data-i18n="Industries" class="underline-active">Industries</a>
-    <a href="#how" data-i18n="How it works" class="underline-active">How it works</a>
-    <a href="#pilot" data-i18n="Pilot" class="underline-active">Pilot</a>
-    <a href="#contact" data-i18n="Contact" class="underline-active">Contact</a>
-</nav>
+      <nav id="site-nav"
+        class="hidden xl-custom:flex items-center gap-8 text-base h-[60px] border border-gray-300/30 rounded-full px-6 py-2 bg-white/60 backdrop-blur-sm transition-[backdrop-filter,background-color,box-shadow] duration-300 whitespace-nowrap w-800">
+        <a href="#product" data-i18n="Product" class="underline-active">Product</a>
+        <a href="#industries" data-i18n="Industries" class="underline-active">Industries</a>
+        <a href="#how" data-i18n="How it works" class="underline-active">How it works</a>
+        <a href="#pilot" data-i18n="Pilot" class="underline-active">Pilot</a>
+        <a href="#contact" data-i18n="Contact" class="underline-active">Contact</a>
+      </nav>
 
       <!-- Langue desktop -->
-      <div class="relative hidden md:flex">
+      <div class="relative hidden xl-custom:flex">
         <button id="lang-toggle" class="lang-btn" aria-label="Change language">
-          <!-- Drapeau -->
-          <iconify-icon id="lang-flag" icon="twemoji:flag-united-kingdom" width="20">
-          </iconify-icon>
-
-          <!-- Flèche -->
-          <iconify-icon icon="mdi:chevron-down" width="18">
-          </iconify-icon>
+          <iconify-icon id="lang-flag" icon="twemoji:flag-united-kingdom" width="20"></iconify-icon>
+          <iconify-icon icon="mdi:chevron-down" width="18"></iconify-icon>
         </button>
 
-        <!-- Dropdown -->
-        <div id="lang-menu"
-          class="absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded-md shadow-lg hidden z-50">
+        <div id="lang-menu">
           <button data-lang="EN" class="flex items-center gap-2 w-full px-4 py-2 hover:bg-gray-100">
             <iconify-icon icon="twemoji:flag-united-kingdom" width="18"></iconify-icon>
             English
@@ -81,9 +81,8 @@
         </div>
       </div>
 
-
       <!-- Boutons desktop -->
-      <div class="hidden md:flex items-center gap-3">
+      <div class="hidden xl-custom:flex items-center gap-3">
         <a href="#contact" data-i18n="Talk to us"
           class="btn-secondary text-base py-4 w-[150px] text-center whitespace-nowrap overflow-hidden">Talk to us</a>
         <a href="#company" data-i18n="Book a demo"
@@ -91,92 +90,114 @@
       </div>
 
     </div>
-
-    <!-- Mobile menu -->
-    <div id="mobile-menu"
-      class="md:hidden hidden absolute top-full right-4 bg-white border border-gray-200 rounded-md shadow-lg z-50 w-60">
-      <ul class="flex flex-col px-4 py-6 gap-4 text-base font-medium">
-        <li><a href="#product" data-i18n="Product" class="underline-active">Product</a></li>
-        <li><a href="#industries" data-i18n="Industries" class="underline-active">Industries</a></li>
-        <li><a href="#how" data-i18n="How it works" class="underline-active">How it works</a></li>
-        <li><a href="#pilot" data-i18n="Pilot" class="underline-active">Pilot</a></li>
-        <li><a href="#contact" data-i18n="Contact" class="underline-active">Contact</a></li>
-
-        <li class="pt-4 border-t">
-          <div class="relative w-full">
-            <button id="lang-toggle-mobile" class="lang-btn w-full flex items-center justify-between gap-2"
-              aria-label="Change language">
-              <!-- Drapeau -->
-              <iconify-icon id="lang-flag-mobile" icon="twemoji:flag-united-kingdom" width="20">
-              </iconify-icon>
-
-              <!-- Texte -->
-              <span id="lang-current-mobile">EN</span>
-
-              <!-- Flèche -->
-              <iconify-icon id="lang-chevron-mobile" icon="mdi:chevron-down" width="18">
-              </iconify-icon>
-            </button>
-
-            <!-- Dropdown -->
-            <div id="lang-menu-mobile"
-              class="hidden mt-2 w-full bg-white border border-gray-200 rounded-md shadow-lg z-50">
-              <button data-lang="EN" class="w-full text-left px-4 py-2 hover:bg-gray-100">
-                <iconify-icon icon="twemoji:flag-united-kingdom" width="18"></iconify-icon>
-                English
-              </button>
-              <button data-lang="FR" class="w-full text-left px-4 py-2 hover:bg-gray-100">
-                <iconify-icon icon="twemoji:flag-france" width="18"></iconify-icon>
-                Français
-              </button>
-            </div>
-          </div>
-        </li>
-        <li>
-          <a href="#contact" data-i18n="Talk to us" class="btn-secondary w-full text-center">Talk to us</a>
-        </li>
-        <li>
-          <a href="#company" data-i18n="Book a demo" class="btn-primary w-full text-center">Book a demo</a>
-        </li>
-      </ul>
-    </div>
   </header>
 
-  <!-- Hero -->
-  <section id="top" class="relative overflow-hidden min-h-[calc(100vh-4rem)] flex items-center justify-center">
-    <!-- Dégradé de fond -->
-    <div class="absolute inset-0 bg-gradient-to-b from-white via-white to-indigo-50 pointer-events-none -z-10"></div>
+  <!-- Mobile menu - CARD GRAND FORMAT -->
+  <div id="mobile-menu" class="xl-custom:hidden">
+    
+    <!-- Card du menu grand format -->
+    <div class="fixed inset-4 z-[80] flex items-center justify-center">
+      <div id="mobile-card" class="bg-[#0a1f3f] border-2 border-white/30 rounded-3xl shadow-2xl w-full h-full flex flex-col relative overflow-hidden">
+        
+        <!-- Header avec logo et croix DANS la card - CENTRÉS ENSEMBLE -->
+        <div class="flex items-center justify-center px-6 py-6 border-b border-white/20">
+          <div class="flex items-center gap-4 backdrop-blur-md bg-white/10 rounded-full px-3 py-1">
+            <!-- Logo -->
+            <a href="#top" id="header-logo-mobile" class="flex items-center gap-2 font-semibold text-xl">
+              <img src="/asset/image/Logo_Export_EVIMO_PRIMARY-LOGO_COLOR.svg" alt="EVIMO logo" class="h-8 w-auto brightness-0 invert" />
+            </a>
 
+            <!-- Séparateur vertical -->
+            <div class="w-px h-6 bg-white/50"></div>
+
+            <!-- Croix de fermeture -->
+            <button id="close-menu" class="flex items-center justify-center w-10 h-10 text-white" aria-label="Close menu">
+              <div class="burger-icon w-6 h-6 flex items-center justify-center relative">
+                <span class="absolute w-full h-[2px] bg-white transition-all duration-300 rounded-full" style="transform: rotate(45deg);"></span>
+                <span class="absolute w-full h-[2px] bg-white transition-all duration-300 rounded-full" style="transform: rotate(-45deg);"></span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Contenu du menu (centré verticalement) -->
+        <div class="flex-1 flex flex-col items-center justify-center px-6 py-8 gap-8">
+          
+          <ul class="flex flex-col items-center gap-6 text-2xl font-medium text-white">
+            <li><a href="#product" data-i18n="Product" class="hover:text-blue-300 transition-colors">Product</a></li>
+            <li><a href="#industries" data-i18n="Industries" class="hover:text-blue-300 transition-colors">Industries</a></li>
+            <li><a href="#how" data-i18n="How it works" class="hover:text-blue-300 transition-colors">How it works</a></li>
+            <li><a href="#pilot" data-i18n="Pilot" class="hover:text-blue-300 transition-colors">Pilot</a></li>
+            <li><a href="#contact" data-i18n="Contact" class="hover:text-blue-300 transition-colors">Contact</a></li>
+          </ul>
+
+          <div class="flex flex-col items-center gap-4 w-full max-w-sm pt-8">
+            <!-- Sélecteur de langue mobile -->
+            <div class="relative w-full">
+              <button id="lang-toggle-mobile" class="w-full flex items-center justify-between gap-2 bg-white/10 hover:bg-white/20 rounded-lg px-4 py-3 text-white transition-colors"
+                aria-label="Change language">
+                <iconify-icon id="lang-flag-mobile" icon="twemoji:flag-united-kingdom" width="20"></iconify-icon>
+                <span id="lang-current-mobile">EN</span>
+                <iconify-icon id="lang-chevron-mobile" icon="mdi:chevron-down" width="18" class="transition-transform duration-200"></iconify-icon>
+              </button>
+
+              <div id="lang-menu-mobile" class="lang-menu-mobile-hidden">
+                <button data-lang="EN" class="w-full text-left px-4 py-3 hover:bg-white/10 flex items-center gap-2 text-white transition-colors">
+                  <iconify-icon icon="twemoji:flag-united-kingdom" width="18"></iconify-icon>
+                  English
+                </button>
+                <button data-lang="FR" class="w-full text-left px-4 py-3 hover:bg-white/10 flex items-center gap-2 text-white transition-colors">
+                  <iconify-icon icon="twemoji:flag-france" width="18"></iconify-icon>
+                  Français
+                </button>
+              </div>
+            </div>
+
+            <!-- Boutons CTA -->
+            <a href="#contact" data-i18n="Talk to us" class="w-full text-center py-3 px-6 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-colors font-medium">Talk to us</a>
+            <a href="#company" data-i18n="Book a demo" class="w-full text-center py-3 px-6 bg-white text-[#0a1f3f] hover:bg-gray-100 rounded-lg transition-colors font-medium">Book a demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+<section id="top" class="relative overflow-hidden min-h-screen flex items-center justify-center m-0 p-0"> 
+  
+  <!-- Card Hero -->
+  <div class="relative max-w-7xl w-full rounded-3xl p-12 sm:p-16 lg:p-20">
     <!-- Contenu centré -->
-    <div class="text-center px-4 sm:px-6 lg:px-8 max-w-3xl">
+    <div class="text-center">
       <h1 class="text-4xl sm:text-5xl font-bold leading-tight" data-i18n="The AI assistant for maintenance operations">
         The
         <span class="bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-400 bg-clip-text text-transparent">
           AI assistant
-        </span data>
+        </span>
         for maintenance operations
       </h1>
-
-      <p class="mt-8 text-1xl text-gray-600"
+      
+      <p class="mt-8 text-xl text-gray-600"
         data-i18n="EVIMO helps infrastructure operators maximize uptime and cut OPEX with native-AI diagnostics, predictive maintenance, and workflow automation. We start with EV charging (IRVE) and expand to facility management, BESS, and industry.">
         EVIMO helps infrastructure operators maximize uptime and cut OPEX with native-AI diagnostics, predictive
         maintenance, and workflow automation. We start with EV charging (IRVE) and expand to facility management, BESS,
-        and industry. </p>
-
+        and industry.
+      </p>
+      
       <div class="mt-10 flex flex-wrap justify-center gap-3">
         <a href="#pilot" data-i18n="Start a pilot"
           class="btn-primary text-base h-[68px] px-8 flex items-center justify-center">Start a pilot</a>
         <a href="#how" data-i18n="See how it works"
           class="btn-secondary text-base h-[68px] px-8 flex items-center justify-center">See how it works</a>
       </div>
-
+      
       <p class="mt-6 text-xs sm:text-sm text-gray-500"
         data-i18n="Built in France • GDPR-first • Works with your data (OCPP, IoT, CMMS).">
         Built in France • GDPR-first • Works with your data (OCPP, IoT, CMMS).
       </p>
     </div>
-  </section>
-
+  </div>
+</section>
 
   <!-- Features -->
   <section class="relative bg-white py-20 text-black">
@@ -190,8 +211,8 @@
             <div class="progress absolute left-0 top-0 bottom-0 w-2 bg-gray-200 rounded-full overflow-hidden">
               <div class="fill absolute inset-0 bg-blue-500 rounded-full"></div>
             </div>
-            <h3 class="text-2xl sm:text-5xl font-manrope font-medium text-black" data-i18n="EVA Diagnostics">EVA
-              Diagnostics</h3>
+            <h2 class="text-2xl sm:text-5xl font-manrope font-medium text-black" data-i18n="EVA Diagnostics">EVA
+              Diagnostics</h2>
             <p class="mt-3 max-w-md text-gray-500" data-i18n="AI explanation & root cause analysis on charger faults">
               AI explanation & root cause analysis on charger faults
             </p>
@@ -202,8 +223,8 @@
             <div class="progress absolute left-0 top-0 bottom-0 w-2 bg-gray-200 rounded-full overflow-hidden">
               <div class="fill absolute inset-0 bg-blue-500 rounded-full"></div>
             </div>
-            <h3 class="text-2xl sm:text-5xl font-manrope font-medium text-gray-400" data-i18n="Predictive alerts">
-              Predictive alerts</h3>
+            <h2 class="text-2xl sm:text-5xl font-manrope font-medium text-gray-400" data-i18n="Predictive alerts">
+              Predictive alerts</h2>
             <p class="mt-3 max-w-md text-gray-400" data-i18n="Failure risk forecasts from logs, sensors & tickets">
               Failure risk forecasts from logs, sensors & tickets
             </p>
@@ -214,8 +235,8 @@
             <div class="progress absolute left-0 top-0 bottom-0 w-2 bg-gray-200 rounded-full overflow-hidden">
               <div class="fill absolute inset-0 bg-blue-500 rounded-full"></div>
             </div>
-            <h3 class="text-2xl sm:text-5xl font-manrope font-medium text-gray-400" data-i18n="Technician assist">
-              Technician assist</h3>
+            <h2 class="text-2xl sm:text-5xl font-manrope font-medium text-gray-400" data-i18n="Technician assist">
+              Technician assist</h2>
             <p class="mt-3 max-w-md text-gray-400" data-i18n="Step-by-step fix plans, parts & SLA-aware scheduling">
               Step-by-step fix plans, parts & SLA-aware scheduling
             </p>
@@ -237,120 +258,123 @@
       </div>
     </div>
 
-    <!-- Product -->
-    <section id="product" class="py-36 bg-white">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-        <!-- ✅ Titre & paragraphe centrés -->
-        <div class="max-w-2xl mx-auto">
-          <h2 class="text-3xl sm:text-4xl font-bold text-gray-800" data-i18n="EVIMO One">EVIMO One</h2>
-          <p class="mt-3 text-gray-400"
-            data-i18n="Native-AI platform for predictive maintenance, diagnostics, and work orchestration.">
-            Native-AI platform for predictive maintenance, diagnostics, and work orchestration.
-          </p>
-        </div>
+<!-- Product -->
+<section id="product" class="py-36 bg-white">
+  <div class="mx-auto max-w-[85rem] px-4 sm:px-6 lg:px-8">
+    
+      <!-- Titre & paragraphe centrés -->
+      <div class="max-w-2xl mx-auto text-center">
+        <h3 class="text-3xl sm:text-4xl font-bold text-gray-800" data-i18n="EVIMO One">EVIMO One</h3>
+        <p class="mt-3 text-gray-400"
+          data-i18n="Native-AI platform for predictive maintenance, diagnostics, and work orchestration.">
+          Native-AI platform for predictive maintenance, diagnostics, and work orchestration.
+        </p>
+      </div>
 
-        <!-- ✅ Grille de cartes -->
+      <!-- Grille de cartes -->
+      <div class="relative mt-16 fancy-frame">
 
-        <div class="relative mt-16 fancy-frame">
+        <!-- Traits horizontaux et verticaux allongés -->
+        <div class="absolute top-0 left-[-20px] w-[calc(100%+40px)] h-px bg-gray-200"></div> <!-- Haut -->
+        <div class="absolute bottom-0 left-[-20px] w-[calc(100%+40px)] h-px bg-gray-200"></div> <!-- Bas -->
+        <div class="absolute top-[-20px] left-0 h-[calc(100%+40px)] w-px bg-gray-200"></div> <!-- Gauche -->
+        <div class="absolute top-[-20px] right-0 h-[calc(100%+40px)] w-px bg-gray-200"></div> <!-- Droite -->
 
-          <!-- Traits horizontaux et verticaux allongés -->
-          <div class="absolute top-0 left-[-20px] w-[calc(100%+40px)] h-px bg-gray-200"></div> <!-- Haut -->
-          <div class="absolute bottom-0 left-[-20px] w-[calc(100%+40px)] h-px bg-gray-200"></div> <!-- Bas -->
-          <div class="absolute top-[-20px] left-0 h-[calc(100%+40px)] w-px bg-gray-200"></div> <!-- Gauche -->
-          <div class="absolute top-[-20px] right-0 h-[calc(100%+40px)] w-px bg-gray-200"></div> <!-- Droite -->
+        <!-- ✅ Grille des cards -->
+        <div class="grid-inner grid gap-[1px] sm:grid-cols-2 lg:grid-cols-3 bg-gray-200 rounded-xl overflow-hidden">
 
-          <!-- ✅ Grille des cards -->
-          <div class="grid-inner grid gap-[1px] sm:grid-cols-2 lg:grid-cols-3 bg-gray-200 rounded-xl overflow-hidden">
+          <!-- Carte -->
+          <div class="flex flex-col p-8 bg-white transition-colors text-left">
+            <div class="mb-6 flex h-12 w-12 items-center justify-center ">
 
-            <!-- Carte -->
-            <div class="flex flex-col p-8 bg-white transition-colors text-left">
-              <div class="mb-6 flex h-12 w-12 items-center justify-center ">
-
-                <iconify-icon icon="clarity:cog-line" width="26" height="26" class="text-gray-400"></iconify-icon>
-              </div>
-              <h3 class="text-lg font-medium" data-i18n="Predictive maintenance">Predictive maintenance</h3>
-              <p class="mt-2 text-sm text-gray-400"
-                data-i18n="Forecast failures using OCPP logs, IoT signals, tickets, and environment data.">
-                Forecast failures using OCPP logs, IoT signals, tickets, and environment data.
-              </p>
+              <iconify-icon icon="clarity:cog-line" width="26" height="26" class="text-gray-400"></iconify-icon>
             </div>
-
-            <!-- Carte 2 -->
-            <div class="flex flex-col p-8 bg-white transition-colors text-left">
-              <div class="mb-6 flex h-12 w-12 items-center justify-center">
-                <iconify-icon icon="mdi:robot-outline" width="26" height="26" class="text-gray-400"></iconify-icon>
-              </div>
-              <h3 class="text-lg font-medium" data-i18n="AI diagnostics (EVA)">AI diagnostics (EVA)</h3>
-              <p class="mt-2 text-sm text-gray-400"
-                data-i18n="Explain anomalies, deduplicate errors, and propose probable root causes with confidence.">
-                Explain anomalies, deduplicate errors, and propose probable root causes with confidence.
-              </p>
-            </div>
-
-            <!-- Carte 3 -->
-            <div class="flex flex-col p-8 bg-white transition-colors text-left">
-              <div class="mb-6 flex h-12 w-12 items-center justify-center">
-                <iconify-icon icon="fluent-emoji-high-contrast:hammer-and-wrench" width="26" height="26"
-                  class="text-gray-400"></iconify-icon>
-              </div>
-              <h3 class="text-lg font-medium" data-i18n="Technician assist">Technician assist</h3>
-              <p class="mt-2 text-sm text-gray-400"
-                data-i18n="Generate step-by-step repair plans, required parts, and safety checklists on the fly.">
-                Generate step-by-step repair plans, required parts, and safety checklists on the fly.
-              </p>
-            </div>
-
-            <!-- Carte 4 -->
-            <div class="flex flex-col p-8 bg-white transition-colors text-left">
-              <div class="mb-6 flex h-12 w-12 items-center justify-center">
-                <iconify-icon icon="mdi:cached" width="26" height="26" class="text-gray-400"></iconify-icon>
-              </div>
-              <h3 class="text-lg font-medium" data-i18n="Workflow automation">Workflow automation</h3>
-              <p class="mt-2 text-sm text-gray-400"
-                data-i18n="Create and update work orders in your CMMS/CRM. Assign by skills, SLA and proximity.">
-                Create and update work orders in your CMMS/CRM. Assign by skills, SLA and proximity.
-              </p>
-            </div>
-
-            <!-- Carte 5 -->
-            <div class="flex flex-col p-8 bg-white transition-colors text-left">
-              <div class="mb-6 flex h-12 w-12 items-center justify-center">
-                <iconify-icon icon="streamline-plump:web" width="26" height="26" class="text-gray-400"></iconify-icon>
-              </div>
-              <h3 class="text-lg font-medium" data-i18n="Open integrations">Open integrations</h3>
-              <p class="mt-2 text-sm text-gray-400"
-                data-i18n="Connect to Salesforce, ServiceNow, Jira, and data lakes. Import/export with APIs.">
-                Connect to Salesforce, ServiceNow, Jira, and data lakes. Import/export with APIs.
-              </p>
-            </div>
-
-            <!-- Carte 6 -->
-            <div class="flex flex-col p-8 bg-white transition-colors text-left">
-              <div class="mb-6 flex h-12 w-12 items-center justify-center">
-                <iconify-icon icon="fluent:shield-task-24-regular" width="26" height="26"
-                  class="text-gray-400"></iconify-icon>
-              </div>
-              <h3 class="text-lg font-medium" data-i18n="Secure & compliant">Secure & compliant</h3>
-              <p class="mt-2 text-sm text-gray-400"
-                data-i18n="GDPR-first, SOC2-ready architecture with granular roles, audit, and encryption.">
-                GDPR-first, SOC2-ready architecture with granular roles, audit, and encryption.
-              </p>
-            </div>
-
+            <h4 class="text-lg font-medium" data-i18n="Predictive maintenance">Predictive maintenance</h4>
+            <p class="mt-2 text-sm text-gray-400"
+              data-i18n="Forecast failures using OCPP logs, IoT signals, tickets, and environment data.">
+              Forecast failures using OCPP logs, IoT signals, tickets, and environment data.
+            </p>
           </div>
+
+          <!-- Carte 2 -->
+          <div class="flex flex-col p-8 bg-white transition-colors text-left">
+            <div class="mb-6 flex h-12 w-12 items-center justify-center">
+              <iconify-icon icon="mdi:robot-outline" width="26" height="26" class="text-gray-400"></iconify-icon>
+            </div>
+            <h4 class="text-lg font-medium" data-i18n="AI diagnostics (EVA)">AI diagnostics (EVA)</h4>
+            <p class="mt-2 text-sm text-gray-400"
+              data-i18n="Explain anomalies, deduplicate errors, and propose probable root causes with confidence.">
+              Explain anomalies, deduplicate errors, and propose probable root causes with confidence.
+            </p>
+          </div>
+
+          <!-- Carte 3 -->
+          <div class="flex flex-col p-8 bg-white transition-colors text-left">
+            <div class="mb-6 flex h-12 w-12 items-center justify-center">
+              <iconify-icon icon="fluent-emoji-high-contrast:hammer-and-wrench" width="26" height="26"
+                class="text-gray-400"></iconify-icon>
+            </div>
+            <h4 class="text-lg font-medium" data-i18n="Technician assist">Technician assist</h4>
+            <p class="mt-2 text-sm text-gray-400"
+              data-i18n="Generate step-by-step repair plans, required parts, and safety checklists on the fly.">
+              Generate step-by-step repair plans, required parts, and safety checklists on the fly.
+            </p>
+          </div>
+
+          <!-- Carte 4 -->
+          <div class="flex flex-col p-8 bg-white transition-colors text-left">
+            <div class="mb-6 flex h-12 w-12 items-center justify-center">
+              <iconify-icon icon="mdi:cached" width="26" height="26" class="text-gray-400"></iconify-icon>
+            </div>
+            <h4 class="text-lg font-medium" data-i18n="Workflow automation">Workflow automation</h4>
+            <p class="mt-2 text-sm text-gray-400"
+              data-i18n="Create and update work orders in your CMMS/CRM. Assign by skills, SLA and proximity.">
+              Create and update work orders in your CMMS/CRM. Assign by skills, SLA and proximity.
+            </p>
+          </div>
+
+          <!-- Carte 5 -->
+          <div class="flex flex-col p-8 bg-white transition-colors text-left">
+            <div class="mb-6 flex h-12 w-12 items-center justify-center">
+              <iconify-icon icon="streamline-plump:web" width="26" height="26" class="text-gray-400"></iconify-icon>
+            </div>
+            <h4 class="text-lg font-medium" data-i18n="Open integrations">Open integrations</h4>
+            <p class="mt-2 text-sm text-gray-400"
+              data-i18n="Connect to Salesforce, ServiceNow, Jira, and data lakes. Import/export with APIs.">
+              Connect to Salesforce, ServiceNow, Jira, and data lakes. Import/export with APIs.
+            </p>
+          </div>
+
+          <!-- Carte 6 -->
+          <div class="flex flex-col p-8 bg-white transition-colors text-left">
+            <div class="mb-6 flex h-12 w-12 items-center justify-center">
+              <iconify-icon icon="fluent:shield-task-24-regular" width="26" height="26"
+                class="text-gray-400"></iconify-icon>
+            </div>
+            <h4 class="text-lg font-medium" data-i18n="Secure & compliant">Secure & compliant</h4>
+            <p class="mt-2 text-sm text-gray-400"
+              data-i18n="GDPR-first, SOC2-ready architecture with granular roles, audit, and encryption.">
+              GDPR-first, SOC2-ready architecture with granular roles, audit, and encryption.
+            </p>
+          </div>
+
         </div>
-    </section>
+      </div>
+      
+    </div>
+  </div>
+</section>
 
     <!-- Industries -->
     <section id="industries" class="relative bg-white text-gray-800 py-24 overflow-hidden">
 
-      <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="relative mx-auto max-w-4xl px-6 lg:px-8">
         <!-- Le reste de ton contenu (titre + grille) -->
 
         <!-- Titre -->
         <div class="relative max-w-3xl mx-auto text-center mb-20">
-          <h2 class="text-4xl font-bold text-gray-800" data-i18n="Built for the field. Starting with IRVE.">Built for
-            the field. Starting with IRVE.</h2>
+          <h3 class="text-4xl font-bold text-gray-800" data-i18n="Built for the field. Starting with IRVE.">Built for
+            the field. Starting with IRVE.</h3>
           <p class="mt-4 text-gray-600 text-lg"
             data-i18n="We begin with EV charging infrastructure, then expand to adjacent asset-heavy operations.">
             We begin with EV charging infrastructure, then expand to adjacent asset-heavy operations.
@@ -358,7 +382,7 @@
         </div>
 
         <!-- Conteneur grille + traits décoratifs -->
-        <div class="relative grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-24 pl-32">
+        <div class="relative grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-24  lg:pl-20">
 
           <!-- ✅ Traits décoratifs entre les cartes -->
           <div class="absolute inset-0 pointer-events-none z-0 hidden lg:block">
@@ -371,14 +395,14 @@
           </div>
 
           <!-- ✅ Colonne 1 - EV Charging -->
-          <div class="relative flex flex-col items-start justify-center p-10 text-left z-10">
+          <div class="relative flex flex-col items-start justify-center p-10 text-left z-10 lg:ml-10">
             <div class="absolute top-0 left-0 w-3/4 h-full z-0 ">
               <img src="/asset/image/pexels-kindelmedia-9800002.jpg" alt=""
                 class="w-full h-full object-cover opacity-20 rounded-2xl">
             </div>
             <div class="relative z-10">
-              <h3 class="text-2xl font-semibold text-gray-900 mb-4" data-i18n="EV Charging (IRVE)">EV Charging (IRVE)
-              </h3>
+              <h4 class="text-[20px] font-semibold text-gray-900 mb-4" data-i18n="EV Charging (IRVE)">EV Charging (IRVE)
+              </h4>
               <ul class="list-none space-y-2 text-gray-600">
                 <li class="flex items-start gap-2"> <span class="iconify"
                     data-icon="material-symbols:check-circle-outline-rounded" style="color: black;"></span> <span
@@ -392,13 +416,13 @@
               </ul>
             </div>
           </div> <!-- ✅ Colonne 2 - Facility Management -->
-          <div class="relative flex flex-col items-start justify-center p-10 text-left z-10">
+          <div class="relative flex flex-col items-start justify-center p-10 text-left z-10 lg:ml-10">
             <div class="absolute top-0 left-0 w-3/4 h-full z-0 "> <img
                 src="/asset/image/pexels-laura-penwell-309923-3608056.jpg" alt=""
                 class="w-full h-full object-cover opacity-20 rounded-2xl"> </div>
             <div class="relative z-10">
-              <h3 class="text-2xl font-semibold text-gray-900 mb-4" data-i18n="Facility Management">Facility Management
-              </h3>
+              <h4 class="text-[20px] font-semibold text-gray-900 mb-4" data-i18n="Facility Management">Facility Management
+              </h4>
               <ul class="list-none space-y-2 text-gray-600">
                 <li class="flex items-start gap-2"> <span class="iconify"
                     data-icon="material-symbols:check-circle-outline-rounded" style="color: black;"></span> <span
@@ -412,12 +436,13 @@
               </ul>
             </div>
           </div> <!-- ✅ Colonne 3 - BESS -->
-          <div class="relative flex flex-col items-start justify-center p-10 text-left z-10">
+          <div class="relative flex flex-col items-start justify-center p-10 text-left z-10 lg:ml-10">
             <!-- ✅ Arrière-plan colonne 3 -->
-            <div class="absolute top-0 left-0 w-3/4 h-full z-0 "> <img src="/asset/image/pexels-cookiecutter-1148820.jpg"
-                alt="" class="w-full h-full object-cover opacity-20 rounded-2xl"> </div>
+            <div class="absolute top-0 left-0 w-3/4 h-full z-0 "> <img
+                src="/asset/image/pexels-cookiecutter-1148820.jpg" alt=""
+                class="w-full h-full object-cover opacity-20 rounded-2xl"> </div>
             <div class="relative z-10">
-              <h3 class="text-2xl font-semibold text-gray-900 mb-4">BESS</h3>
+              <h4 class="text-[20px]  font-semibold text-gray-900 mb-4">BESS</h4>
               <ul class="list-none space-y-2 text-gray-600">
                 <li class="flex items-start gap-2"> <span class="iconify"
                     data-icon="material-symbols:check-circle-outline-rounded" style="color: black;"></span> <span
@@ -431,12 +456,12 @@
               </ul>
             </div>
           </div> <!-- ✅ Colonne 4 - Industry -->
-          <div class="relative flex flex-col items-start justify-center p-10 text-left z-10">
+          <div class="relative flex flex-col items-start justify-center p-10 text-left z-10 lg:ml-10">
             <!-- ✅ Arrière-plan colonne 4 -->
-            <div class="absolute top-0 left-0 w-3/4 h-full z-0 "> <img src="/asset/image/pexels-klaus-44936-167676.jpg" alt=""
-                class="w-full h-full object-cover opacity-20 rounded-2xl"> </div>
+            <div class="absolute top-0 left-0 w-3/4 h-full z-0 "> <img src="/asset/image/pexels-klaus-44936-167676.jpg"
+                alt="" class="w-full h-full object-cover opacity-20 rounded-2xl"> </div>
             <div class="relative z-10">
-              <h3 class="text-2xl font-semibold text-gray-900 mb-4" data-i18n="Industry">Industry</h3>
+              <h4 class="text-[20px] font-semibold text-gray-900 mb-4" data-i18n="Industry">Industry</h4>
               <ul class="list-none space-y-2 text-gray-600">
                 <li class="flex items-start gap-2"> <span class="iconify"
                     data-icon="material-symbols:check-circle-outline-rounded" style="color: black;"></span> <span
@@ -455,10 +480,10 @@
     </section>
 
     <!-- How it works -->
-    <section id="how" class="py-20 bg-white text-gray">
+    <section id="how" class="py-2 bg-white text-gray">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
         <div class="max-w-2xl mx-auto">
-          <h2 class="text-3xl font-bold text-gray-800" data-i18n="How it works">How it works</h2>
+          <h3 class="text-3xl font-bold text-gray-800" data-i18n="How it works">How it works</h3>
           <p class="mt-3 text-gray-400" data-i18n="From data to action—in four steps.">From data to action—in four
             steps.</p>
         </div>
@@ -472,10 +497,10 @@
           <ol class="relative z-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
             <!-- Step 1 -->
             <li class="flex flex-row items-start gap-4 text-left">
-              <div class="animated-dot w-4 h-4 rounded-full bg-white border-2 z-10"
+              <div class="animated-dot w-4 h-4 rounded-full bg-[#F0F6FF] border-2 z-10"
                 style="transform: translateX(30px); animation-delay: 0.0s;"></div>
               <div class="w-full text-left">
-                <h3 class="mt-10 font-semibold" data-i18n="Ingest">Ingest</h3>
+                <h4 class="mt-10 font-semibold" data-i18n="Ingest">Ingest</h4>
                 <p class="mt-2 text-sm text-gray-400 max-w-xs"
                   data-i18n="Connect OCPP, IoT, CMMS, CRM and data lakes securely.">
                   Connect OCPP, IoT, CMMS, CRM and data lakes securely.
@@ -485,10 +510,10 @@
 
             <!-- Step 2 -->
             <li class="flex flex-row items-start gap-4 text-left">
-              <div class="animated-dot w-4 h-4 rounded-full bg-white border-2 z-10"
+              <div class="animated-dot w-4 h-4 rounded-full bg-[#F0F6FF] border-2 z-10"
                 style="transform: translateX(30px); animation-delay: 2.2s;"></div>
               <div class="w-full text-left ">
-                <h3 class="mt-10 font-semibold" data-i18n="Detect">Detect</h3>
+                <h4 class="mt-10 font-semibold" data-i18n="Detect">Detect</h4>
                 <p class="mt-2 text-sm text-gray-400 max-w-xs"
                   data-i18n="Models spot anomalies, risks and duplicate errors.">
                   Models spot anomalies, risks and duplicate errors.
@@ -498,10 +523,10 @@
 
             <!-- Step 3 -->
             <li class="flex flex-row items-start gap-4 text-left">
-              <div class="animated-dot w-4 h-4 rounded-full bg-white border-2 z-10"
+              <div class="animated-dot w-4 h-4 rounded-full bg-[#F0F6FF] border-2 z-10"
                 style="transform: translateX(30px); animation-delay: 4.8s;"></div>
               <div class="w-full text-left">
-                <h3 class="mt-10 font-semibold" data-i18n="Assist">Assist</h3>
+                <h4 class="mt-10 font-semibold" data-i18n="Assist">Assist</h4>
                 <p class="mt-2 text-sm text-gray-400 max-w-xs"
                   data-i18n="EVA explains, recommends fixes, and drafts work orders.">
                   EVA explains, recommends fixes, and drafts work orders.
@@ -511,10 +536,10 @@
 
             <!-- Step 4 -->
             <li class="flex flex-row items-start gap-4 text-left">
-              <div class="animated-dot w-4 h-4 rounded-full bg-white border-2 z-10"
+              <div class="animated-dot w-4 h-4 rounded-full bg-[#F0F6FF] border-2 z-10"
                 style="transform: translateX(30px); animation-delay: 9.5s;"></div>
               <div class="w-full text-left">
-                <h3 class="mt-10 font-semibold" data-i18n="Automate">Automate</h3>
+                <h4 class="mt-10 font-semibold" data-i18n="Automate">Automate</h4>
                 <p class="mt-2 text-sm text-gray-400 max-w-xs"
                   data-i18n="Orchestrate workflows, SLAs, routing and reporting.">
                   Orchestrate workflows, SLAs, routing and reporting.
@@ -527,34 +552,32 @@
     </section>
 
 
-    <!-- Pilot CTA -->
-    <section id="pilot" class="relative py-20">
-      <div class="absolute inset-0 -z-10 bg-white"></div>
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="rounded-2xl border border-gray-200  p-10 shadow-lg via-sky-50 to-emerald-50">
-          <div class="grid lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <h2 class="text-3xl font-bold text-gray-800" data-i18n="Pilot EVIMO in 30 days">Pilot EVIMO in 30 days
-              </h2>
-              <p class="mt-3 text-gray-600"
-                data-i18n="Integrate one site or region, connect data sources, and measure uptime & OPEX impact. We provide templates, KPIs and success criteria.">
-                Integrate one site or region, connect data sources, and measure uptime &
-                OPEX
-                impact. We provide templates, KPIs and success criteria.</p>
-            </div>
-            <div class="flex gap-3">
-              <a href="#" class="btn-primary text-base" data-i18n="Request a pilot">Request a pilot</a>
-            </div>
-          </div>
+   <!-- Pilot CTA -->
+<section id="pilot" class="relative py-20">
+  <div class="absolute inset-0 -z-10 bg-white"></div>
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="rounded-2xl border border-gray-200 p-10 shadow-lg bg-white">
+      <div class="grid lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <h3 class="text-3xl font-bold text-gray-800" data-i18n="Pilot EVIMO in 30 days">Pilot EVIMO in 30 days</h3>
+          <p class="mt-3 text-gray-600"
+            data-i18n="Integrate one site or region, connect data sources, and measure uptime & OPEX impact. We provide templates, KPIs and success criteria.">
+            Integrate one site or region, connect data sources, and measure uptime & OPEX impact. We provide templates, KPIs and success criteria.
+          </p>
+        </div>
+        <div class="flex gap-3 justify-start lg:justify-end">
+          <a href="#" class="btn-primary text-base" data-i18n="Request a pilot">Request a pilot</a>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <!-- Contact -->
     <section id="contact" class="py-20">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="max-w-2xl">
-          <h2 class="text-3xl font-bold text-gray-800" data-i18n="Contact">Contact</h2>
+          <h3 class="text-3xl font-bold text-gray-800" data-i18n="Contact">Contact</h3>
           <p class="mt-3 text-gray-600" data-i18n="Tell us about your operations and we’ll tailor a demo.">
             Tell us about your operations and we’ll tailor a demo.
           </p>
@@ -589,7 +612,7 @@
             </form>
           </div>
           <div id="company" class="rounded-2xl border border-gray-200 p-6 shadow-sm">
-            <h3 class="font-semibold" data-i18n="Company">Company</h3>
+            <h4 class="font-semibold" data-i18n="Company">Company</h4>
             <ul class="mt-3 space-y-2 text-sm text-gray-600">
               <li><strong data-i18n="Email">Email: </strong> <a class="text-indigo-600 hover:underline text-base px-2"
                   href="mailto:contact@evimo.fr?subject=EVIMO%20Demo%20Request">contact@evimo.fr</a></li>
@@ -629,57 +652,61 @@
       </div>
     </div>
     <!-- Footer -->
-    <footer class="bg-white/70 backdrop-blur-sm border-t border-gray-200 mt-16">
+    <footer class="bg-white/70 backdrop-blur-sm border-gray-200 ">
       <div class="mx-auto max-w-7xl px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
 
         <!-- Logo + baseline -->
-        <div class="flex flex-col items-start space-y-4 mt-10">
-          <a href="index.html#top" class="flex items-center gap-2">
+        <div class="flex flex-col items-center md:items-start space-y-4">
+          <a href="index.html#top">
             <img src="/asset/image/Logo_Export_EVIMO_PRIMARY-LOGO_COLOR.svg" alt="EVIMO logo" class="h-12 w-auto" />
           </a>
         </div>
 
         <!-- Contact -->
-        <div class="space-y-2 text-gray-700">
-          <h3 class="text-gray-900 font-semibold mb-3">Contact</h3>
-          <p>Station F/ Pi Cube <br>5 Parv. Alan Turning<br>75013 Paris, France</p>
-          <p>Email :
+        <div class="flex flex-col items-center md:items-start space-y-2 text-gray-700">
+          <h4 class="text-gray-900 font-semibold mb-3">Contact</h4>
+          <p class="text-center md:text-left">
+            Station F / Pi Cube<br>
+            5 Parv. Alan Turing<br>
+            75013 Paris, France
+          </p>
+          <p class="text-center md:text-left">
+            Email:
             <a href="mailto:contact@evimo.com" class="text-indigo-600 hover:underline">
               contact@evimo.com
             </a>
           </p>
         </div>
 
-        <!-- Liens utiles -->
-        <div class="space-y-2 text-gray-700">
-          <h3 class="text-gray-900 font-semibold mb-3" data-i18n="Useful links">Useful links</h3>
-          <ul class="space-y-1">
-            <li><a href="/confidentialite.html" class="hover:underline" data-i18n="Privacy">Privacy</a></li>
-            <li><a href="/securite.html" class="hover:underline" data-i18n="Security">Security</a></li>
-            <li><a href="/condition.html" class="hover:underline" data-i18n="Terms">Terms</a></li>
-            <li><a href="/mention.html" class="hover:underline" data-i18n="Legal notice">Legal notice</a></li>
+        <!-- Useful links -->
+        <div class="flex flex-col items-center md:items-start space-y-2 text-gray-700">
+          <h4 class="text-gray-900  font-semibold mb-2">Useful links</h4>
+          <ul class="space-y-1 text-center md:text-left">
+            <li><a href="/confidentialite.html" class="hover:underline">Privacy</a></li>
+            <li><a href="/securite.html" class="hover:underline">Security</a></li>
+            <li><a href="/condition.html" class="hover:underline">Terms</a></li>
+            <li><a href="/mention.html" class="hover:underline">Legal notice</a></li>
           </ul>
         </div>
 
-        <!-- Réseaux -->
-        <div class="space-y-4 text-gray-700">
-          <h3 class="text-gray-900 font-semibold mb-3" data-i18n="Follow us">Follow us</h3>
-          <div class="flex items-center gap-4">
+        <!-- Follow us -->
+        <div class="flex flex-col items-center md:items-start space-y-4 text-gray-700">
+          <h4 class="text-gray-900 font-semibold mb-3">Follow us</h4>
+          <div class="flex gap-4">
             <a href="https://www.linkedin.com/company/evimo-fr" target="_blank" rel="noopener noreferrer"
-              class="text-gray-700 hover:text-indigo-600 transition">
+              class="hover:text-indigo-600 transition">
               <iconify-icon icon="mdi:linkedin" width="32"></iconify-icon>
-            </a>
+          </a>
           </div>
         </div>
-
       </div>
-
-      <!-- Copyright -->
-      <div class="border-t border-gray-200 text-center py-5 text-sm text-gray-500">
+       <!-- Copyright -->
+      <div class="text-center py-5 text-sm text-gray-500">
         © <span id="year"></span> EVIMO. All rights reserved.
       </div>
-
     </footer>
+
+
 
     <script src="/asset/app.js"></script>
 </body>
