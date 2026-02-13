@@ -599,6 +599,43 @@ const translations = {
     "Le site est soumis au droit français. Tout litige sera porté devant les tribunaux compétents.",
 
   "Last update: 04/12/2025": "Dernière mise à jour : 04/12/2025",
+
+  // Traductions FR
+"Frequently Asked Questions": "Questions Fréquemment Posées",
+"Everything you need to know about EVIMO and AI-powered maintenance.": "Tout ce que vous devez savoir sur EVIMO et la maintenance assistée par IA.",
+
+// Questions
+"What is predictive maintenance software?": "Qu'est-ce qu'un logiciel de maintenance prédictive ?",
+"How does AI improve maintenance operations?": "Comment l'IA améliore-t-elle les opérations de maintenance ?",
+"Is EVIMO suitable for EV charging infrastructure?": "EVIMO est-il adapté aux infrastructures de recharge électrique ?",
+"How does EVIMO integrate with CMMS systems?": "Comment EVIMO s'intègre-t-il avec les systèmes CMMS ?",
+"Can EVIMO help reduce maintenance costs?": "EVIMO peut-il aider à réduire les coûts de maintenance ?",
+"How quickly can EVIMO be deployed?": "En combien de temps EVIMO peut-il être déployé ?",
+"Does EVIMO support OCPP analytics?": "EVIMO prend-il en charge l'analyse OCPP ?",
+"What types of infrastructure are supported?": "Quels types d'infrastructures sont pris en charge ?",
+"Is EVIMO a preventive or predictive maintenance solution?": "EVIMO est-il une solution de maintenance préventive ou prédictive ?",
+"How does the EVIMO pilot work?": "Comment fonctionne le pilote EVIMO ?",
+
+// Réponses
+"Predictive maintenance software uses data and AI to anticipate equipment failures before they occur. It helps operators reduce downtime, optimize maintenance workflows, and lower operational costs by acting at the right time.": "Un logiciel de maintenance prédictive utilise les données et l'IA pour anticiper les pannes d'équipement avant qu'elles ne se produisent. Il aide les opérateurs à réduire les temps d'arrêt, à optimiser les flux de travail de maintenance et à réduire les coûts opérationnels en agissant au bon moment.",
+
+"AI analyzes large volumes of operational data to detect anomalies, identify failure patterns, and recommend corrective actions. This enables faster decisions, more accurate diagnostics, and automated maintenance workflows.": "L'IA analyse de grands volumes de données opérationnelles pour détecter les anomalies, identifier les schémas de défaillance et recommander des actions correctives. Cela permet des décisions plus rapides, des diagnostics plus précis et des flux de travail de maintenance automatisés.",
+
+"Yes, EVIMO is designed to support EV charging maintenance. It monitors charging stations, detects faults early, and improves uptime for electric vehicle charging infrastructure using AI-based diagnostics.": "Oui, EVIMO est conçu pour prendre en charge la maintenance de la recharge électrique. Il surveille les bornes de recharge, détecte les pannes précocement et améliore la disponibilité des infrastructures de recharge pour véhicules électriques grâce à des diagnostics basés sur l'IA.",
+
+"EVIMO offers seamless CMMS AI integration. It connects with existing maintenance management systems to enrich work orders, automate workflows, and improve decision-making without disrupting current processes.": "EVIMO offre une intégration transparente avec les systèmes CMMS. Il se connecte aux systèmes de gestion de maintenance existants pour enrichir les bons de travail, automatiser les flux de travail et améliorer la prise de décision sans perturber les processus actuels.",
+
+"Yes, EVIMO helps reduce maintenance costs by AI by preventing unexpected failures, optimizing maintenance schedules, and reducing unnecessary interventions across your infrastructure.": "Oui, EVIMO aide à réduire les coûts de maintenance grâce à l'IA en prévenant les pannes inattendues, en optimisant les calendriers de maintenance et en réduisant les interventions inutiles dans votre infrastructure.",
+
+"EVIMO can be deployed in a few weeks. A pilot typically runs for 30 days and includes data integration, KPI definition, and performance measurement on a selected site or region.": "EVIMO peut être déployé en quelques semaines. Un pilote dure généralement 30 jours et comprend l'intégration des données, la définition des KPI et la mesure des performances sur un site ou une région sélectionné.",
+
+"Yes, EVIMO includes OCPP analytics capabilities. The platform analyzes charging station data to detect faults, monitor performance, and optimize maintenance strategies for EV infrastructure.": "Oui, EVIMO inclut des capacités d'analyse OCPP. La plateforme analyse les données des bornes de recharge pour détecter les pannes, surveiller les performances et optimiser les stratégies de maintenance pour les infrastructures de VE.",
+
+"EVIMO supports a wide range of infrastructures, including EV charging stations, industrial assets, facilities management systems, and other critical infrastructure requiring high availability.": "EVIMO prend en charge une large gamme d'infrastructures, y compris les bornes de recharge électrique, les actifs industriels, les systèmes de gestion des installations et d'autres infrastructures critiques nécessitant une haute disponibilité.",
+
+"EVIMO is both. It combines preventive maintenance AI with predictive maintenance software to anticipate failures while automating preventive actions based on real-time data.": "EVIMO est les deux. Il combine l'IA de maintenance préventive avec un logiciel de maintenance prédictive pour anticiper les défaillances tout en automatisant les actions préventives basées sur des données en temps réel.",
+
+"The EVIMO pilot allows you to test the platform on a real use case. It includes data ingestion, AI diagnostics, workflow automation, and measurable results on uptime and maintenance efficiency.": "Le pilote EVIMO vous permet de tester la plateforme sur un cas d'usage réel. Il comprend l'ingestion de données, les diagnostics IA, l'automatisation des flux de travail et des résultats mesurables sur la disponibilité et l'efficacité de la maintenance."
 };
 
 // Fonction pour basculer la langue
@@ -1011,3 +1048,33 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// ===========================
+// FAQ ACCORDION FUNCTIONALITY
+// ===========================
+
+document.addEventListener('DOMContentLoaded', function() {
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    
+    question.addEventListener('click', () => {
+      // Toggle current item
+      const isActive = item.classList.contains('active');
+      
+      // Close all other items (optional - remove if you want multiple open)
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.classList.remove('active');
+        }
+      });
+      
+      // Toggle current item
+      if (isActive) {
+        item.classList.remove('active');
+      } else {
+        item.classList.add('active');
+      }
+    });
+  });
+});
