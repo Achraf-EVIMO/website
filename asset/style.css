@@ -385,15 +385,9 @@ body {
     word-break: break-word; /* évite que les mots longs débordent */
   }
 
-  /* Ajuste l'image de fond si nécessaire */
-  #industries .relative.flex.flex-col.items-start .absolute.w-3\/4 {
-    width: 100%; /* l'image prend toute la largeur du conteneur */
-    
-  }
 
-  #industries .relative.flex.flex-col.items-start .absolute.w-3\/4 img {
-    width: 100%;
-  }
+
+  
 }
 
 

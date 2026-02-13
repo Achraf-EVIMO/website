@@ -111,7 +111,7 @@ section:has(#feature-text) .mx-auto.max-w-7xl > * {
   background: transparent !important;
   border: none !important;
   border-radius: 0 !important;
-  padding: 2rem 6rem !important;
+  padding: 2rem 2rem !important;
   min-height: auto !important;
   position: relative;
   overflow: visible !important;
