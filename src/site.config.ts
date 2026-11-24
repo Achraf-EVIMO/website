@@ -10,7 +10,7 @@ export const site = {
 
   // Lien du formulaire Tally de demande d'audit gratuit (ex. 'https://tally.so/r/abcd12').
   // Tant qu'il est vide, le bouton ouvre un mail pré-rempli vers contactEmail.
-  auditTallyUrl: '',
+  auditTallyUrl: 'https://tally.so/r/RWD1ZK',
 
   // Page LinkedIn de l'entreprise (ex. 'https://www.linkedin.com/company/...').
   linkedinUrl: '',

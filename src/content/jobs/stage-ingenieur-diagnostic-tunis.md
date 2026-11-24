@@ -8,6 +8,7 @@ paid: Stage rémunéré
 lang: fr
 applyEmail: achraf.gharsalli@evimo.fr
 applySubject: Candidature - Stage Ingénieur Diagnostic Bornes IRVE
+tallyUrl: https://tally.so/r/5XZoGN
 order: 1
 published: true
 ---
