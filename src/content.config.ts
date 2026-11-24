@@ -14,6 +14,8 @@ const jobs = defineCollection({
     start: z.string().optional(),
     duration: z.string().optional(),
     paid: z.string().optional(),
+    remote: z.string().optional(), // ex. « Full remote », « Très flexible »
+    equipment: z.string().optional(), // ex. « Ordinateur fourni »
     lang: z.enum(['fr', 'en']).default('fr'),
     // Pour postuler : par mail avec un objet imposé (filtre Gmail), ou par un formulaire Tally.
     applyEmail: z.string().email(),

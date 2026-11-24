@@ -4,7 +4,7 @@
 export const fr = {
   lang: 'fr',
   meta: {
-    title: 'EVIMO — Chaque intervention règle la panne du premier coup',
+    title: 'EVIMO : chaque intervention règle la panne du premier coup',
     description:
       "EVIMO détecte les pannes des bornes de recharge, même celles que personne ne voit, les diagnostique à partir des logs OCPP et de la documentation constructeur, et envoie le technicien avec la bonne pièce et la bonne procédure.",
   },
@@ -40,7 +40,7 @@ export const fr = {
     illustrative: 'Illustratif',
     id: 'INC-2041',
     title: 'Le connecteur 2 ne se déverrouille plus',
-    meta: 'Vitry — Parking Gare · borne AC 22 kW · il y a 3 jours',
+    meta: 'Vitry, parking de la gare · borne AC 22 kW · il y a 3 jours',
     status: 'Actif',
     detected: 'Détecté par EVIMO',
     notReported: 'Aucun ticket ouvert',
@@ -130,18 +130,18 @@ export const fr = {
     funnelNote: 'Schéma de principe, pas une mesure.',
   },
   stream: {
-    head: 'Flux de la supervision — brut',
+    head: 'Flux brut de la supervision',
     headMeta: '1 204 points de charge',
     correlate: 'Corréler',
     incidentHead: 'Incident',
     id: 'INC-4471',
     priority: 'Priorité 1',
-    title: 'Site hors ligne — Aulnay Nord',
+    title: 'Site hors ligne à Aulnay Nord',
     rows: [
       ['Périmètre', '40 connecteurs, 12 bornes'],
       ['Signaux regroupés', '218 en 90 secondes'],
       ['Cause probable', 'Lien réseau coupé'],
-      ['Action recommandée', 'Escalade — intervention terrain'],
+      ['Action recommandée', 'Escalade vers le terrain'],
     ],
     confidence: 'Confiance',
     note: "Illustratif. Les preuves restent attachées à l'incident : un technicien peut toujours vérifier pourquoi il a été ouvert.",
@@ -175,12 +175,12 @@ export const fr = {
     cta: 'Vérifier sur mes données',
   },
   map: {
-    caption: 'Réseau — 1 204 points de charge',
+    caption: 'Réseau de 1 204 points de charge',
     fault: 'Panne non signalée',
     detected: 'Détectée, en diagnostic',
     ok: 'En service',
     cardStatus: 'Hors ligne depuis 6 jours · aucun ticket',
-    cardTitle: 'Cergy Sud — la borne 09 ne charge plus',
+    cardTitle: 'Cergy Sud : la borne 09 ne charge plus',
     detectedBy: 'Détecté par EVIMO',
     label: 'Carte illustrative du réseau',
   },
@@ -356,7 +356,7 @@ export const fr = {
     applyNote: 'Les candidatures sans cet objet ne pourront pas être traitées.',
     applyButton: 'Postuler par mail',
     applyTally: 'Postuler en ligne',
-    facts: { location: 'Lieu', type: 'Contrat', start: 'Début', duration: 'Durée', paid: 'Rémunération' },
+    facts: { location: 'Lieu', type: 'Contrat', start: 'Début', duration: 'Durée', paid: 'Rémunération', remote: 'Télétravail', equipment: 'Équipement' },
     inFrench: '',
   },
   footer: {

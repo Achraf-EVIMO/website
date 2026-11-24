@@ -1,11 +1,13 @@
 ---
-title: Stage commercial — développement auprès des syndicats d'énergie et des opérateurs de bornes
+title: "Stage commercial : développement auprès des syndicats d'énergie et des opérateurs de bornes"
 summary: Prospecter les syndicats d'énergie et les opérateurs de bornes, préparer nos audits gratuits et suivre le pipeline avec le CEO.
-location: Paris — Station F
+location: Paris, Station F
 type: Stage
 start: Février 2027
 duration: 6 mois
 paid: Stage rémunéré
+remote: Très flexible
+equipment: Ordinateur fourni
 lang: fr
 applyEmail: achraf.gharsalli@evimo.fr
 applySubject: Candidature - Stage Commercial IRVE
@@ -43,6 +45,9 @@ Les syndicats d'énergie possèdent une grande partie des bornes publiques en Fr
 ## Ce que nous offrons
 
 Un stage rémunéré de six mois à Station F, au contact direct du CEO et de nos clients, avec de vraies responsabilités commerciales dès le premier mois.
+
+- **Télétravail :** nous sommes très flexibles. Vous organisez vos semaines entre Station F, la maison et les rendez-vous clients.
+- **Équipement :** un ordinateur vous est fourni.
 
 ## Pour candidater
 

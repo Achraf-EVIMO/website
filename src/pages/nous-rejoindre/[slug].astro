@@ -38,6 +38,8 @@ const mailto = `mailto:${d.applyEmail}?subject=${encodeURIComponent(d.applySubje
             {d.start && <div><dt>{c.facts.start}</dt><dd>{d.start}</dd></div>}
             {d.duration && <div><dt>{c.facts.duration}</dt><dd>{d.duration}</dd></div>}
             {d.paid && <div><dt>{c.facts.paid}</dt><dd>{d.paid}</dd></div>}
+            {d.remote && <div><dt>{c.facts.remote}</dt><dd>{d.remote}</dd></div>}
+            {d.equipment && <div><dt>{c.facts.equipment}</dt><dd>{d.equipment}</dd></div>}
           </dl>
           {d.tallyUrl ? (
             <a class="btn btn-primary" href={d.tallyUrl} target="_blank" rel="noopener">{c.applyTally}<Icon name="arrow" /></a>

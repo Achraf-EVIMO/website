@@ -8,20 +8,20 @@ const f = t.flux;
 
 const raw = [
   ['10:42:01', 'FR-AUL-N', 'CP-014', 'StatusNotification', 'Faulted', 'GroundFailure', 'g'],
-  ['10:42:01', 'FR-AUL-N', 'CP-014', 'ConnectionLost', '—', 'backhaul', 'g'],
-  ['10:42:02', 'FR-AUL-N', 'CP-015', 'ConnectionLost', '—', 'backhaul', 'g'],
-  ['10:42:03', 'FR-VIT-P', 'CP-002', 'StatusNotification', 'SuspendedEV', '—', ''],
-  ['10:42:03', 'FR-AUL-N', 'CP-017', 'ConnectionLost', '—', 'backhaul', 'g'],
+  ['10:42:01', 'FR-AUL-N', 'CP-014', 'ConnectionLost', '-', 'backhaul', 'g'],
+  ['10:42:02', 'FR-AUL-N', 'CP-015', 'ConnectionLost', '-', 'backhaul', 'g'],
+  ['10:42:03', 'FR-VIT-P', 'CP-002', 'StatusNotification', 'SuspendedEV', '-', ''],
+  ['10:42:03', 'FR-AUL-N', 'CP-017', 'ConnectionLost', '-', 'backhaul', 'g'],
   ['10:42:04', 'FR-CER-S', 'CP-009', 'StopTransaction', 'Reason=Other', 'sess 8814', ''],
   ['10:42:05', 'FR-VIT-P', 'CP-002', 'StatusNotification', 'Faulted', 'ConnectorLockFailure', 'r'],
-  ['10:42:05', 'FR-AUL-N', 'CP-019', 'ConnectionLost', '—', 'backhaul', 'g'],
+  ['10:42:05', 'FR-AUL-N', 'CP-019', 'ConnectionLost', '-', 'backhaul', 'g'],
   ['10:42:06', 'FR-CER-S', 'CP-011', 'MeterValues', '21.4 kW', 'drift −4%', ''],
-  ['10:42:07', 'FR-AUL-N', 'CP-021', 'ConnectionLost', '—', 'backhaul', 'g'],
-  ['10:42:07', 'FR-BAG-E', 'CP-003', 'Heartbeat', 'ok', '—', ''],
+  ['10:42:07', 'FR-AUL-N', 'CP-021', 'ConnectionLost', '-', 'backhaul', 'g'],
+  ['10:42:07', 'FR-BAG-E', 'CP-003', 'Heartbeat', 'ok', '-', ''],
   ['10:42:08', 'FR-CER-S', 'CP-009', 'StartTransaction', 'failed', 'retry 2', 'r'],
-  ['10:42:09', 'FR-AUL-N', 'CP-023', 'ConnectionLost', '—', 'backhaul', 'g'],
-  ['10:42:10', 'FR-VIT-P', 'CP-002', 'ChangeAvailability', 'rejected', '—', ''],
-  ['10:42:10', 'FR-AUL-N', 'CP-025', 'ConnectionLost', '—', 'backhaul', 'g'],
+  ['10:42:09', 'FR-AUL-N', 'CP-023', 'ConnectionLost', '-', 'backhaul', 'g'],
+  ['10:42:10', 'FR-VIT-P', 'CP-002', 'ChangeAvailability', 'rejected', '-', ''],
+  ['10:42:10', 'FR-AUL-N', 'CP-025', 'ConnectionLost', '-', 'backhaul', 'g'],
 ];
 const line = (l: string[]) => `${l[0]}  ${l[1]}  ${l[2]}  ${l[3].padEnd(19)} ${l[4].padEnd(13)} ${l[5]}`;
 const rows = s.rows;

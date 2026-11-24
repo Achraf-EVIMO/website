@@ -4,7 +4,7 @@ import type { Dict } from './fr';
 export const en: Dict = {
   lang: 'en',
   meta: {
-    title: 'EVIMO — Every intervention fixes the fault the first time',
+    title: 'EVIMO: every intervention fixes the fault the first time',
     description:
       'EVIMO detects charging station faults, including the ones nobody sees, diagnoses them from OCPP logs and manufacturer documentation, and sends the technician with the right part and the right procedure.',
   },
@@ -40,7 +40,7 @@ export const en: Dict = {
     illustrative: 'Illustrative',
     id: 'INC-2041',
     title: 'Connector 2 will not unlock',
-    meta: 'Vitry — Station car park · AC 22 kW · 3 days ago',
+    meta: 'Vitry, station car park · AC 22 kW · 3 days ago',
     status: 'Active',
     detected: 'Detected by EVIMO',
     notReported: 'No ticket opened',
@@ -90,7 +90,7 @@ export const en: Dict = {
       },
     ],
     quote:
-      '“Our operator only has time for tickets and phone calls. Nobody reads the weak signals — so I do it myself, by hand.”',
+      '“Our operator only has time for tickets and phone calls. Nobody reads the weak signals, so I do it myself, by hand.”',
     quoteBy: 'Public energy syndicate, 340 charge points · customer discovery interview, 2026',
   },
   how: {
@@ -129,18 +129,18 @@ export const en: Dict = {
     funnelNote: 'Principle diagram, not a measurement.',
   },
   stream: {
-    head: 'CSMS stream — raw',
+    head: 'Raw CSMS stream',
     headMeta: '1,204 charge points',
     correlate: 'Correlate',
     incidentHead: 'Incident',
     id: 'INC-4471',
     priority: 'Priority 1',
-    title: 'Site offline — Aulnay Nord',
+    title: 'Site offline in Aulnay Nord',
     rows: [
       ['Blast radius', '40 connectors, 12 stations'],
       ['Signals grouped', '218 in 90 seconds'],
       ['Probable cause', 'Network backhaul down'],
-      ['Recommended', 'Escalate — field intervention'],
+      ['Recommended', 'Escalate to the field'],
     ],
     confidence: 'Confidence',
     note: 'Illustrative. The evidence stays attached to the incident, so a technician can always check why it was opened.',
@@ -174,12 +174,12 @@ export const en: Dict = {
     cta: 'Check it on my data',
   },
   map: {
-    caption: 'Network — 1,204 charge points',
+    caption: 'Network of 1,204 charge points',
     fault: 'Unreported fault',
     detected: 'Detected, being diagnosed',
     ok: 'In service',
     cardStatus: 'Offline for 6 days · no ticket',
-    cardTitle: 'Cergy Sud — station 09 no longer charges',
+    cardTitle: 'Cergy Sud: station 09 no longer charges',
     detectedBy: 'Detected by EVIMO',
     label: 'Illustrative network map',
   },
@@ -353,7 +353,7 @@ export const en: Dict = {
     applyNote: 'Applications without this subject cannot be processed.',
     applyButton: 'Apply by email',
     applyTally: 'Apply online',
-    facts: { location: 'Location', type: 'Contract', start: 'Start', duration: 'Duration', paid: 'Pay' },
+    facts: { location: 'Location', type: 'Contract', start: 'Start', duration: 'Duration', paid: 'Pay', remote: 'Remote work', equipment: 'Equipment' },
     inFrench: 'Offer in French',
   },
   footer: {

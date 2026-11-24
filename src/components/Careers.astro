@@ -35,6 +35,7 @@ const jobs = (await getCollection('jobs', ({ data }) => data.published)).sort((a
                 <span>{j.data.type}</span>
                 {j.data.duration && <span>{j.data.duration}</span>}
                 {j.data.start && <span>{j.data.start}</span>}
+                {j.data.remote && <span>{j.data.remote}</span>}
                 {!fr && j.data.lang === 'fr' && <span class="pill">{c.inFrench}</span>}
               </div>
             </div>
