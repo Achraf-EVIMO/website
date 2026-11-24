@@ -13,7 +13,7 @@ const titleParts = t.hero.title.split(fr ? ' du premier coup' : ' the first time
 const partners = [
   { name: 'SIGEIF', logo: '/partners/sigeif.png', role: t.partners.roles.SIGEIF },
   { name: 'SDEM50', logo: '/partners/sdem50.png', role: t.partners.roles.SDEM50 },
-  { name: 'ANYOS', logo: '/partners/anyos.png', role: t.partners.roles.ANYOS },
+  { name: 'ANYOS', logo: '/partners/anyos.png', role: t.partners.roles.ANYOS, wide: true },
 ];
 ---
 <Base t={t} current="home" alternate={fr ? '/en/' : '/'}>
@@ -44,7 +44,7 @@ const partners = [
       <div class="logos">
         {partners.map((p) => (
           <div class="logo-card">
-            <img src={p.logo} alt={p.name} loading="lazy" />
+            <img class={p.wide ? 'wide' : undefined} src={p.logo} alt={p.name} loading="lazy" />
             <span>{p.role}</span>
           </div>
         ))}
