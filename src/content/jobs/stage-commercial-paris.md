@@ -4,7 +4,7 @@ summary: Prospecter les syndicats d'énergie et les opérateurs de bornes, prép
 location: Paris, Station F
 city: Paris
 type: Stage
-start: Février 2027
+start: Février 2027 · date ajustable
 duration: 6 mois
 paid: Stage rémunéré
 remote: Très flexible

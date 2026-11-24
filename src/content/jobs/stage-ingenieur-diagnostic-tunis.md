@@ -4,6 +4,7 @@ summary: Analyser les logs OCPP de bornes réelles, vérifier les diagnostics d'
 location: Tunisie, full remote
 city: Tunis
 type: Stage de fin d'études
+start: Février 2027 · date ajustable
 duration: 6 mois
 paid: Stage rémunéré
 remote: Full remote
