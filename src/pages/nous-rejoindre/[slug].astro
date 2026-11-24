@@ -1,0 +1,59 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import ApplyForm from '../../components/ApplyForm.astro';
+import { getCollection, render } from 'astro:content';
+import { fr } from '../../i18n/fr';
+import { en } from '../../i18n/en';
+
+export async function getStaticPaths() {
+  const jobs = await getCollection('jobs', ({ data }) => data.published);
+  return jobs.map((job) => ({ params: { slug: job.id }, props: { job } }));
+}
+
+const { job } = Astro.props;
+const d = job.data;
+const t = d.lang === 'en' ? en : fr;
+const c = t.careers;
+const { Content } = await render(job);
+const mailto = `mailto:${d.applyEmail}?subject=${encodeURIComponent(d.applySubject)}`;
+const facts = [
+  [c.facts.location, d.location],
+  [c.facts.type, d.type],
+  [c.facts.start, d.start],
+  [c.facts.duration, d.duration],
+  [c.facts.paid, d.paid],
+  [c.facts.remote, d.remote],
+  [c.facts.equipment, d.equipment],
+].filter(([, v]) => v);
+---
+<Base t={t} title={d.title} description={d.summary} current="careers" alternate={t.lang === 'fr' ? '/en/careers/' : '/nous-rejoindre/'}>
+  <section class="section offer">
+    <div class="container">
+      <a class="link back" href={t.routes.careers}><Icon name="back" />{c.back}</a>
+      <div class="layout-2 offer-grid">
+        <article>
+          <h1 class="offer-title">{d.title}</h1>
+          <div class="offer-facts">
+            {facts.map(([k, v]) => <span><span class="muted">{k} </span><b>{v}</b></span>)}
+          </div>
+          <div class="prose"><Content /></div>
+        </article>
+
+        <aside class="sticky">
+          {d.tallyUrl ? (
+            <ApplyForm t={t} option={d.tallyOption} tallyUrl={d.tallyUrl} />
+          ) : (
+            <div class="card">
+              <h2>{c.apply}</h2>
+              <p class="small muted">{c.applyIntro}</p>
+              <p class="subject">{d.applySubject}</p>
+              <a class="btn btn-primary" href={mailto}><Icon name="mail" />{c.applyButton}</a>
+              <p class="small muted">{d.applyEmail}<br />{c.applyNote}</p>
+            </div>
+          )}
+        </aside>
+      </div>
+    </div>
+  </section>
+</Base>

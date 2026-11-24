@@ -1,0 +1,87 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from './Icon.astro';
+import { getCollection } from 'astro:content';
+import type { Dict } from '../i18n/fr';
+
+interface Props { t: Dict }
+const { t } = Astro.props;
+const c = t.careers;
+const fr = t.lang === 'fr';
+const jobs = (await getCollection('jobs', ({ data }) => data.published)).sort((a, b) => a.data.order - b.data.order);
+const cities = ['Paris', 'Tunis'].filter((city) => jobs.some((j) => j.data.city === city));
+---
+<Base t={t} title={c.title} description={c.lead} current="careers" alternate={fr ? '/en/careers/' : '/nous-rejoindre/'}>
+  <section class="page-head">
+    <div class="container careers-head">
+      <h1 class="display">{c.headline}</h1>
+      <p class="lead">{c.lead}</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:8px">
+    <div class="container">
+      <div class="filters" data-filters>
+        <button type="button" class="chip on" data-city="all" aria-pressed="true">{c.all}</button>
+        {cities.map((city) => <button type="button" class="chip" data-city={city} aria-pressed="false">{city}</button>)}
+        <span class="count muted" data-count data-one={c.countOne} data-many={c.countMany}>{jobs.length} {jobs.length > 1 ? c.countMany : c.countOne}</span>
+      </div>
+
+      <div class="jobtable">
+        <div class="jobtable-head" aria-hidden="true">
+          <span>{c.cols.post}</span><span>{c.cols.location}</span><span>{c.cols.type}</span><span>{c.cols.start}</span><span></span>
+        </div>
+        {jobs.length === 0 && <p class="empty">{c.none}</p>}
+        {jobs.map((j) => (
+          <a class="jobrow" href={`/nous-rejoindre/${j.id}/`} data-city={j.data.city}>
+            <span class="jobrow-title">
+              {j.data.title}
+              {!fr && j.data.lang === 'fr' && <span class="pill">{c.inFrench}</span>}
+            </span>
+            <span><b class="m">{c.cols.location} </b>{j.data.location}</span>
+            <span><b class="m">{c.cols.type} </b>{j.data.type}</span>
+            <span>{j.data.start && <><b class="m">{c.cols.start} </b>{j.data.start}</>}</span>
+            <span class="go">{c.apply}<Icon name="arrow" /></span>
+          </a>
+        ))}
+        <a class="jobrow spontaneous" href="/nous-rejoindre/candidature-spontanee/">
+          <span><b>{c.spontaneousTitle}</b><span class="muted">{c.spontaneous}</span></span>
+          <span class="go">{c.spontaneousCta}<Icon name="arrow" /></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="night">
+    <div class="container band3">
+      {c.band.map((b) => (
+        <div><span class="big num">{b.value}</span><h3>{b.title}</h3><p>{b.text}</p></div>
+      ))}
+    </div>
+  </section>
+</Base>
+
+<script>
+  const box = document.querySelector('[data-filters]');
+  if (box) {
+    const rows = document.querySelectorAll<HTMLElement>('.jobrow[data-city]');
+    const count = box.querySelector<HTMLElement>('[data-count]');
+    box.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-city]');
+      if (!btn) return;
+      const city = btn.dataset.city;
+      box.querySelectorAll('button[data-city]').forEach((b) => {
+        const on = b === btn;
+        b.classList.toggle('on', on);
+        b.setAttribute('aria-pressed', String(on));
+      });
+      let n = 0;
+      rows.forEach((r) => {
+        const show = city === 'all' || r.dataset.city === city;
+        r.hidden = !show;
+        if (show) n++;
+      });
+      if (count) count.textContent = `${n} ${n > 1 ? count.dataset.many : count.dataset.one}`;
+    });
+  }
+</script>

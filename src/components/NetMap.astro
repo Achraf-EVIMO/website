@@ -1,0 +1,41 @@
+---
+// Carte illustrative du réseau : ~150 points de charge, quelques pannes qui pulsent.
+// Les positions sont calculées à la construction du site (toujours les mêmes).
+import type { Dict } from '../i18n/fr';
+interface Props { t: Dict }
+const { t } = Astro.props;
+const m = t.map;
+
+let seed = 7;
+const rnd = () => { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; };
+const dots = Array.from({ length: 150 }, () => {
+  const a = rnd() * Math.PI * 2, r = Math.sqrt(rnd());
+  const x = 52 + Math.cos(a) * r * 38 * (1 + 0.25 * Math.sin(a * 3));
+  const y = 46 + Math.sin(a) * r * 32 * (1 + 0.2 * Math.cos(a * 2));
+  const k = rnd();
+  const status = k < 0.05 ? 'fault' : k < 0.1 ? 'detected' : 'ok';
+  const color = status === 'fault' ? '#e5484d' : status === 'detected' ? '#0059ff' : '#b8c6de';
+  const size = status === 'ok' ? 5 : 8;
+  const delay = (rnd() * 2).toFixed(2);
+  return { x: x.toFixed(2), y: y.toFixed(2), color, size, status, delay };
+});
+---
+<div class="netmap enter-3" role="img" aria-label={m.label}>
+  <div class="netmap-grid"></div>
+  {dots.map((d) => (
+    <span class="dot" style={`left:${d.x}%;top:${d.y}%;width:${d.size}px;height:${d.size}px;background:${d.color};color:${d.color};${d.status !== 'ok' ? `box-shadow:0 0 14px ${d.color}` : ''}`}>
+      {d.status !== 'ok' && <i style={`animation-delay:${d.delay}s`}></i>}
+    </span>
+  ))}
+  <div class="netmap-caption">{m.caption}</div>
+  <div class="netmap-legend">
+    <span><b style="background:#e5484d"></b>{m.fault}</span>
+    <span><b style="background:#0059ff"></b>{m.detected}</span>
+    <span><b style="background:#b8c6de"></b>{m.ok}</span>
+  </div>
+  <div class="netmap-card">
+    <div class="st"><b></b>{m.cardStatus}</div>
+    <h2>{m.cardTitle}</h2>
+    <div class="conf"><span>{m.detectedBy}</span><span class="bar"><span style="width:91%"></span></span><span class="num">0.91</span></div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+---
+import Legal from '../components/Legal.astro';
+import { site } from '../site.config';
+---
+<Legal title="Politique de confidentialité" updated="24 novembre 2026">
+  <p>
+    Cette politique explique quelles données personnelles EVIMO SAS (« EVIMO ») traite lorsque vous visitez evimo.fr ou
+    que vous nous contactez, et quels sont vos droits. Le responsable du traitement est EVIMO SAS, dont le siège est à {site.legalAddress}.
+  </p>
+
+  <h2>Visite du site</h2>
+  <p>
+    Le site ne dépose aucun cookie, n'utilise aucun outil de mesure d'audience ni de publicité, et héberge lui-même ses
+    polices. Seules les pages d'offres et de candidature spontanée chargent le formulaire de candidature de notre
+    prestataire Tally : votre navigateur se connecte alors à ses serveurs. Notre hébergeur, GitHub Pages, peut
+    enregistrer techniquement l'adresse IP des visiteurs pour assurer la sécurité du service.
+  </p>
+
+  <h2>Demandes de contact et d'audit</h2>
+  <ul>
+    <li><strong>Données :</strong> nom, adresse mail, organisation, fonction, et les informations que vous nous écrivez.</li>
+    <li><strong>Finalité :</strong> répondre à votre demande et, le cas échéant, préparer et réaliser l'audit demandé.</li>
+    <li><strong>Base légale :</strong> mesures précontractuelles prises à votre demande, et notre intérêt légitime à développer nos relations professionnelles.</li>
+    <li><strong>Durée :</strong> 3 ans après notre dernier échange.</li>
+  </ul>
+  <p>
+    Les données d'exploitation de bornes transmises pour un audit sont encadrées par un contrat d'analyse dédié. Elles
+    ne servent qu'à l'audit et sont supprimées à sa fin, au plus tard 3 mois après leur réception.
+  </p>
+
+  <h2>Candidatures</h2>
+  <ul>
+    <li><strong>Données :</strong> CV, coordonnées, et tout ce que vous choisissez de nous envoyer.</li>
+    <li><strong>Finalité :</strong> étudier votre candidature et vous recontacter.</li>
+    <li><strong>Base légale :</strong> mesures précontractuelles prises à votre demande.</li>
+    <li><strong>Durée :</strong> le temps du recrutement, puis 2 ans au plus pour vous proposer d'autres postes, sauf si vous demandez la suppression plus tôt.</li>
+  </ul>
+
+  <h2>Destinataires</h2>
+  <p>
+    Vos données sont accessibles aux seules personnes d'EVIMO qui en ont besoin, y compris notre équipe de Tunis, et à
+    nos prestataires techniques : messagerie (Google Workspace), hébergement du site (GitHub) et formulaires en ligne (Tally, société belge, données hébergées dans l'Union européenne), dans le cadre de contrats qui les
+    obligent à les protéger. Elles ne sont jamais vendues. Les transferts hors de l'Union européenne sont encadrés par
+    les garanties prévues par le RGPD (décision d'adéquation ou clauses contractuelles types).
+  </p>
+
+  <h2>Vos droits</h2>
+  <p>
+    Vous pouvez accéder à vos données, les faire rectifier ou effacer, vous opposer à leur traitement ou en demander la
+    limitation et la portabilité, en écrivant à <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>. Vous
+    pouvez aussi adresser une réclamation à la CNIL (<a href="https://www.cnil.fr" rel="noopener">cnil.fr</a>).
+  </p>
+</Legal>

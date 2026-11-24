@@ -1,0 +1,32 @@
+---
+// Formulaire Tally de candidature intégré dans la page, avec le poste prérempli
+// (champ caché « poste » du formulaire, qui sert de réponse par défaut à « Poste visé »).
+import { site } from '../site.config';
+import type { Dict } from '../i18n/fr';
+
+interface Props { t: Dict; option?: string; tallyUrl?: string }
+const { t, option, tallyUrl = site.applyTallyUrl } = Astro.props;
+const c = t.careers;
+const id = tallyUrl.split('/').pop();
+const params = new URLSearchParams({ alignLeft: '1', hideTitle: '1', transparentBackground: '1', dynamicHeight: '1' });
+if (option) params.set('poste', option);
+const src = `https://tally.so/embed/${id}?${params.toString()}`;
+const direct = option ? `${tallyUrl}?poste=${encodeURIComponent(option)}` : tallyUrl;
+---
+<div class="apply card">
+  <div>
+    <h2>{c.apply}</h2>
+    <p class="small muted">{c.formIntro}</p>
+  </div>
+  <iframe data-tally-src={src} loading="lazy" width="100%" height="900" frameborder="0" title={c.formTitle}></iframe>
+  <p class="small muted">{c.formFallback} <a class="link" href={direct} target="_blank" rel="noopener">{c.formOpen}</a></p>
+</div>
+<script is:inline src="https://tally.so/widgets/embed.js" async></script>
+<script is:inline>
+  // Si le script Tally tarde, on charge l'iframe directement.
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      document.querySelectorAll('iframe[data-tally-src]:not([src])').forEach(function (f) { f.src = f.dataset.tallySrc; });
+    }, 1500);
+  });
+</script>

@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from './Icon.astro';
+import { site } from '../site.config';
+import type { Dict } from '../i18n/fr';
+
+interface Props { t: Dict }
+const { t } = Astro.props;
+const a = t.audit;
+const mailto = `mailto:${site.contactEmail}?subject=${encodeURIComponent(a.mailSubject)}&body=${encodeURIComponent(a.mailBody)}`;
+const fr = t.lang === 'fr';
+---
+<Base t={t} title={a.title} description={a.lead} current="audit" alternate={fr ? '/en/free-audit/' : '/audit-gratuit/'}>
+  <section class="page-head">
+    <div class="container">
+      <h1 class="display">{a.title}</h1>
+      <p class="lead">{a.lead}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container layout-2">
+      <div class="prose">
+        <h2 style="margin-top:0">{a.whatTitle}</h2>
+        <ul>{a.what.map((x) => <li>{x}</li>)}</ul>
+        <h2>{a.needTitle}</h2>
+        <ul>{a.need.map((x) => <li>{x}</li>)}</ul>
+        <h2>{a.termsTitle}</h2>
+        <ul>{a.terms.map((x) => <li>{x}</li>)}</ul>
+      </div>
+
+      <aside class="sticky" id="demande">
+        <div class="card">
+          <h2>{a.formTitle}</h2>
+          <p class="muted small">{a.formText}</p>
+          {site.auditTallyUrl ? (
+            <a class="btn btn-primary" href={site.auditTallyUrl} target="_blank" rel="noopener">{a.formTitle}<Icon name="arrow" /></a>
+          ) : (
+            <a class="btn btn-primary" href={mailto}><Icon name="mail" />{a.formButton}</a>
+          )}
+          <p class="muted small">{site.contactEmail}</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+</Base>
