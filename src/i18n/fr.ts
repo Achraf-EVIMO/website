@@ -126,8 +126,53 @@ export const fr = {
     ],
     funnelNote: 'Schéma de principe, pas une mesure.',
   },
-  product: {
+  stream: {
+    head: 'Flux de la supervision — brut',
+    headMeta: '1 204 points de charge',
+    correlate: 'Corréler',
+    incidentHead: 'Incident',
+    id: 'INC-4471',
+    priority: 'Priorité 1',
+    title: 'Site hors ligne — Aulnay Nord',
+    rows: [
+      ['Périmètre', '40 connecteurs, 12 bornes'],
+      ['Signaux regroupés', '218 en 90 secondes'],
+      ['Cause probable', 'Lien réseau coupé'],
+      ['Action recommandée', 'Escalade — intervention terrain'],
+    ],
+    confidence: 'Confiance',
+    note: "Illustratif. Les preuves restent attachées à l'incident : un technicien peut toujours vérifier pourquoi il a été ouvert.",
+  },
+  sim: {
     num: '03',
+    title: "Ce que vous économisez, avec vos propres chiffres.",
+    lead:
+      "Réglez la taille de votre parc et votre taux de panne. Le modèle est un calcul, pas une promesse : chaque hypothèse est à vous, et nous la vérifions sur vos données pendant l'audit.",
+    inputs: {
+      fleet: 'Points de charge',
+      rate: 'Pannes par point de charge et par mois',
+      remote: 'Pannes réglables sans déplacement',
+      cost: "Coût d'un déplacement",
+    },
+    outTitle: 'Chaque mois, sur votre parc',
+    out: {
+      signals: ['Messages OCPP lus', 'Personne ne les lit aujourd\'hui.'],
+      alerts: ['Alertes avant regroupement', 'Ce que montrerait un mur de supervision.'],
+      incidents: ['Incidents dans la file', 'Un par panne réelle, classés par priorité.'],
+      human: ['À traiter par une personne', 'Le reste est réglé à distance.'],
+    },
+    absorbedTitle: 'Sur 100 alertes',
+    absorbed: 'absorbées par le regroupement et la résolution à distance',
+    escalated: 'remontées à une personne',
+    avoided: 'Déplacements évités par mois',
+    saved: 'Économie par mois',
+    savedYear: 'par an',
+    model:
+      'Hypothèses : 120 messages OCPP par point de charge et par jour, 6 alertes par panne réelle avant regroupement. Chiffres modifiables, vérifiés sur vos données pendant l\'audit.',
+    cta: 'Vérifier sur mes données',
+  },
+  product: {
+    num: '04',
     title: 'Deux briques. Rien à migrer.',
     lead:
       "EVIMO se place à côté de votre supervision. Vos bornes, votre exploitant et vos usagers ne voient aucune différence.",
@@ -161,7 +206,7 @@ export const fr = {
     ],
   },
   who: {
-    num: '04',
+    num: '05',
     title: 'Pour ceux qui répondent de la disponibilité des bornes.',
     items: [
       {
@@ -196,7 +241,7 @@ export const fr = {
     ],
   },
   security: {
-    num: '05',
+    num: '06',
     title: 'Conçu pour être validé par votre DSI.',
     items: [
       { title: 'Hébergement en Europe', text: 'Les données de vos bornes restent dans l\'Union européenne.' },

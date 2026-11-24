@@ -469,3 +469,6 @@ blockquote.quote footer { margin-top: 12px; font-size: 14px; color: var(--muted)
 .i16 { width: 16px; height: 16px; flex: none; }
 /* Sur mobile, le bloc « Postuler » / « Demander l'audit » passe avant le texte. */
 @media (max-width: 1000px) { .two-col > aside { order: -1; } }
+
+.signals { display: flex; flex-wrap: wrap; gap: 8px; }
+.signals .tag { height: 30px; padding: 0 12px; font-size: 13px; }

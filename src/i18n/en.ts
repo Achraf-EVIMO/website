@@ -125,8 +125,53 @@ export const en: Dict = {
     ],
     funnelNote: 'Principle diagram, not a measurement.',
   },
-  product: {
+  stream: {
+    head: 'CSMS stream — raw',
+    headMeta: '1,204 charge points',
+    correlate: 'Correlate',
+    incidentHead: 'Incident',
+    id: 'INC-4471',
+    priority: 'Priority 1',
+    title: 'Site offline — Aulnay Nord',
+    rows: [
+      ['Blast radius', '40 connectors, 12 stations'],
+      ['Signals grouped', '218 in 90 seconds'],
+      ['Probable cause', 'Network backhaul down'],
+      ['Recommended', 'Escalate — field intervention'],
+    ],
+    confidence: 'Confidence',
+    note: 'Illustrative. The evidence stays attached to the incident, so a technician can always check why it was opened.',
+  },
+  sim: {
     num: '03',
+    title: 'What you save, with your own numbers.',
+    lead:
+      'Set your fleet size and your failure rate. The model is arithmetic, not a promise: every assumption is yours, and we check it against your data during the audit.',
+    inputs: {
+      fleet: 'Charge points',
+      rate: 'Faults per charge point per month',
+      remote: 'Faults fixable without a visit',
+      cost: 'Cost of one site visit',
+    },
+    outTitle: 'Every month, on your fleet',
+    out: {
+      signals: ['OCPP messages read', 'Nobody reads these today.'],
+      alerts: ['Alerts before grouping', 'What a status wall would show you.'],
+      incidents: ['Incidents in the queue', 'One per real fault, ranked.'],
+      human: ['Reaching a person', 'The rest is resolved remotely.'],
+    },
+    absorbedTitle: 'Out of 100 alerts',
+    absorbed: 'absorbed by grouping and remote resolution',
+    escalated: 'escalated to a person',
+    avoided: 'Site visits avoided per month',
+    saved: 'Saved per month',
+    savedYear: 'per year',
+    model:
+      'Assumptions: 120 OCPP messages per charge point per day, 6 alerts per real fault before grouping. Change them freely; we check them against your data during the audit.',
+    cta: 'Check it on my data',
+  },
+  product: {
+    num: '04',
     title: 'Two building blocks. Nothing to migrate.',
     lead: 'EVIMO sits alongside your CSMS. Your stations, your operator and your drivers see no difference.',
     proxy: {
@@ -159,7 +204,7 @@ export const en: Dict = {
     ],
   },
   who: {
-    num: '04',
+    num: '05',
     title: 'For those accountable for charging station uptime.',
     items: [
       {
@@ -194,7 +239,7 @@ export const en: Dict = {
     ],
   },
   security: {
-    num: '05',
+    num: '06',
     title: 'Built to pass your IT review.',
     items: [
       { title: 'EU hosting', text: 'Your station data stays in the European Union.' },

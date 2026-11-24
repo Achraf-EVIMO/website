@@ -15,6 +15,9 @@ export const site = {
   // Page LinkedIn de l'entreprise (ex. 'https://www.linkedin.com/company/...').
   linkedinUrl: '',
 
+  // Bureaux (pied de page).
   address: 'Station F, 5 parvis Alan Turing, 75013 Paris',
+  // Siège social (mentions légales) : ajouter le numéro et la rue.
+  legalAddress: '78300 Poissy',
   tunisCity: 'Tunis',
 };

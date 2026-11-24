@@ -1,0 +1,97 @@
+---
+// Flux OCPP brut qui défile, regroupé en un seul incident.
+import type { Dict } from '../i18n/fr';
+interface Props { t: Dict }
+const { t } = Astro.props;
+const s = t.stream;
+
+const lines = [
+  ['10:42:01', 'FR-AUL-N', 'CP-014', 'StatusNotification', 'Faulted', 'GroundFailure'],
+  ['10:42:01', 'FR-AUL-N', 'CP-014', 'ConnectionLost', '—', 'backhaul'],
+  ['10:42:02', 'FR-AUL-N', 'CP-015', 'ConnectionLost', '—', 'backhaul'],
+  ['10:42:02', 'FR-AUL-N', 'CP-016', 'ConnectionLost', '—', 'backhaul'],
+  ['10:42:03', 'FR-VIT-P', 'CP-002', 'StatusNotification', 'SuspendedEV', '—'],
+  ['10:42:03', 'FR-AUL-N', 'CP-017', 'ConnectionLost', '—', 'backhaul'],
+  ['10:42:04', 'FR-CER-S', 'CP-009', 'StopTransaction', 'Reason=Other', 'sess 8814'],
+  ['10:42:04', 'FR-AUL-N', 'CP-018', 'ConnectionLost', '—', 'backhaul'],
+  ['10:42:05', 'FR-VIT-P', 'CP-002', 'StatusNotification', 'Faulted', 'ConnectorLockFailure'],
+  ['10:42:05', 'FR-AUL-N', 'CP-019', 'ConnectionLost', '—', 'backhaul'],
+  ['10:42:06', 'FR-CER-S', 'CP-011', 'MeterValues', '21.4 kW', 'drift −4%'],
+  ['10:42:06', 'FR-AUL-N', 'CP-020', 'ConnectionLost', '—', 'backhaul'],
+  ['10:42:07', 'FR-AUL-N', 'CP-021', 'ConnectionLost', '—', 'backhaul'],
+  ['10:42:07', 'FR-BAG-E', 'CP-003', 'Heartbeat', 'ok', '—'],
+  ['10:42:08', 'FR-AUL-N', 'CP-022', 'ConnectionLost', '—', 'backhaul'],
+  ['10:42:08', 'FR-CER-S', 'CP-009', 'StartTransaction', 'failed', 'retry 2'],
+  ['10:42:09', 'FR-AUL-N', 'CP-023', 'ConnectionLost', '—', 'backhaul'],
+  ['10:42:09', 'FR-AUL-N', 'CP-024', 'ConnectionLost', '—', 'backhaul'],
+  ['10:42:10', 'FR-VIT-P', 'CP-002', 'ChangeAvailability', 'rejected', '—'],
+  ['10:42:10', 'FR-AUL-N', 'CP-025', 'ConnectionLost', '—', 'backhaul'],
+];
+const pad = (v: string, n: number) => v.padEnd(n, ' ');
+const render = (l: string[]) => `${l[0]}  ${l[1]}  ${l[2]}  ${pad(l[3], 19)} ${pad(l[4], 13)} ${l[5]}`;
+---
+<div class="stream-wrap">
+  <div class="stream card">
+    <div class="card-head"><span>{s.head}</span><span class="illustrative">{s.headMeta}</span></div>
+    <div class="stream-view" aria-hidden="true">
+      <div class="stream-track">
+        {[0, 1].map(() => lines.map((l) => (
+          <div class={`ln${l[1] === 'FR-AUL-N' ? ' grp' : ''}${l[4] === 'Faulted' ? ' flt' : ''}`}>{render(l)}</div>
+        )))}
+      </div>
+    </div>
+  </div>
+
+  <div class="corr" aria-hidden="true">
+    <span class="corr-label">{s.correlate}</span>
+    <span class="corr-n">n → 1</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </div>
+
+  <article class="card incident">
+    <div class="card-head">
+      <span>{s.incidentHead} <span class="id">· {s.id}</span></span>
+      <span class="tag" style="background:color-mix(in srgb,var(--red) 14%,transparent);color:var(--red-text)">{s.priority}</span>
+    </div>
+    <div class="card-sec">
+      <span class="st"><span class="st-dot pulse"></span>{t.incident.status}</span>
+      <h3 class="title" style="font-size:19px;margin-top:8px">{s.title}</h3>
+    </div>
+    <div class="card-sec">
+      <dl class="kv" style="grid-template-columns:128px 1fr">
+        {s.rows.map((r) => (<><dt>{r[0]}</dt><dd>{r[1]}</dd></>))}
+      </dl>
+      <div class="confidence"><span>{s.confidence}</span><span class="bar"><span style="width:94%"></span></span><span class="num">0.94</span></div>
+    </div>
+  </article>
+</div>
+<p class="illustrative" style="margin-top:12px">{s.note}</p>
+
+<style>
+  .stream-wrap { display: grid; grid-template-columns: 1.35fr auto 1fr; gap: 20px; align-items: center; }
+  .stream { overflow: hidden; background: var(--code-bg); border-color: transparent; }
+  .stream .card-head { color: #e7ecf3; border-color: rgba(255,255,255,.08); }
+  .stream .illustrative { color: #8f9bb0; }
+  .stream-view {
+    height: 320px; overflow: hidden; position: relative;
+    mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
+  }
+  .stream-track { padding: 8px 16px; animation: scroll 34s linear infinite; }
+  .stream-view:hover .stream-track { animation-play-state: paused; }
+  .ln { font: 400 11.5px/1.95 var(--mono); color: #9aa6b8; white-space: pre; }
+  .ln.grp { color: #c6d6ff; }
+  .ln.flt { color: #ffb4b0; }
+  @keyframes scroll { from { transform: translateY(0); } to { transform: translateY(-50%); } }
+  .corr { display: grid; justify-items: center; gap: 4px; color: var(--accent-text); }
+  .corr-label { font-size: 12px; font-weight: 600; color: var(--muted); }
+  .corr-n { font: 600 15px/1 var(--mono); }
+  .corr svg { width: 28px; height: 28px; }
+  @media (max-width: 1000px) {
+    .stream-wrap { grid-template-columns: 1fr; }
+    .corr { grid-auto-flow: column; align-items: center; justify-content: center; gap: 10px; }
+    .corr svg { transform: rotate(90deg); }
+    .stream-view { height: 240px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .stream-track { animation: none; } }
+</style>
