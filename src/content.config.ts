@@ -10,6 +10,8 @@ const jobs = defineCollection({
     title: z.string(),
     summary: z.string(),
     location: z.string(),
+    // Ville pour le filtre de la page « Nous rejoindre »
+    city: z.enum(['Paris', 'Tunis']),
     type: z.string(), // ex. « Stage », « CDI », « Alternance »
     start: z.string().optional(),
     duration: z.string().optional(),
@@ -21,6 +23,8 @@ const jobs = defineCollection({
     applyEmail: z.string().email(),
     applySubject: z.string(),
     tallyUrl: z.string().url().optional(),
+    // Texte exact de l'option « Poste visé » dans le formulaire Tally : le poste arrive prérempli.
+    tallyOption: z.string().optional(),
     // Passer à false pour retirer l'offre du site sans supprimer le fichier.
     published: z.boolean().default(true),
     order: z.number().default(10),

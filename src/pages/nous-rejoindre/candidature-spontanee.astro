@@ -1,0 +1,25 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import ApplyForm from '../../components/ApplyForm.astro';
+import { fr as t } from '../../i18n/fr';
+const c = t.careers;
+---
+<Base t={t} title={c.spontaneousTitle} description={c.spontaneous} current="careers" alternate="/en/careers/">
+  <section class="section offer">
+    <div class="container">
+      <a class="link back" href={t.routes.careers}><Icon name="back" />{c.back}</a>
+      <div class="layout-2 offer-grid">
+        <article>
+          <h1 class="offer-title">{c.spontaneousTitle}</h1>
+          <div class="prose">
+            <p>{c.spontaneousText}</p>
+          </div>
+        </article>
+        <aside class="sticky">
+          <ApplyForm t={t} option="Candidature spontanée" />
+        </aside>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Icon from '../../components/Icon.astro';
+import ApplyForm from '../../components/ApplyForm.astro';
 import { getCollection, render } from 'astro:content';
 import { fr } from '../../i18n/fr';
 import { en } from '../../i18n/en';
@@ -16,45 +17,43 @@ const t = d.lang === 'en' ? en : fr;
 const c = t.careers;
 const { Content } = await render(job);
 const mailto = `mailto:${d.applyEmail}?subject=${encodeURIComponent(d.applySubject)}`;
+const facts = [
+  [c.facts.location, d.location],
+  [c.facts.type, d.type],
+  [c.facts.start, d.start],
+  [c.facts.duration, d.duration],
+  [c.facts.paid, d.paid],
+  [c.facts.remote, d.remote],
+  [c.facts.equipment, d.equipment],
+].filter(([, v]) => v);
 ---
 <Base t={t} title={d.title} description={d.summary} current="careers" alternate={t.lang === 'fr' ? '/en/careers/' : '/nous-rejoindre/'}>
-  <section class="page-head">
+  <section class="section offer">
     <div class="container">
       <a class="link back" href={t.routes.careers}><Icon name="back" />{c.back}</a>
-      <h1 class="display">{d.title}</h1>
-      <p class="lead">{d.summary}</p>
-    </div>
-  </section>
+      <div class="layout-2 offer-grid">
+        <article>
+          <h1 class="offer-title">{d.title}</h1>
+          <div class="offer-facts">
+            {facts.map(([k, v]) => <span><span class="muted">{k} </span><b>{v}</b></span>)}
+          </div>
+          <div class="prose"><Content /></div>
+        </article>
 
-  <section class="section" style="padding-top:8px">
-    <div class="container layout-2">
-      <article class="prose"><Content /></article>
-
-      <aside class="sticky">
-        <div class="card">
-          <dl class="facts">
-            <div><dt>{c.facts.location}</dt><dd>{d.location}</dd></div>
-            <div><dt>{c.facts.type}</dt><dd>{d.type}</dd></div>
-            {d.start && <div><dt>{c.facts.start}</dt><dd>{d.start}</dd></div>}
-            {d.duration && <div><dt>{c.facts.duration}</dt><dd>{d.duration}</dd></div>}
-            {d.paid && <div><dt>{c.facts.paid}</dt><dd>{d.paid}</dd></div>}
-            {d.remote && <div><dt>{c.facts.remote}</dt><dd>{d.remote}</dd></div>}
-            {d.equipment && <div><dt>{c.facts.equipment}</dt><dd>{d.equipment}</dd></div>}
-          </dl>
+        <aside class="sticky">
           {d.tallyUrl ? (
-            <a class="btn btn-primary" href={d.tallyUrl} target="_blank" rel="noopener">{c.applyTally}<Icon name="arrow" /></a>
+            <ApplyForm t={t} option={d.tallyOption} tallyUrl={d.tallyUrl} />
           ) : (
-            <>
+            <div class="card">
+              <h2>{c.apply}</h2>
               <p class="small muted">{c.applyIntro}</p>
               <p class="subject">{d.applySubject}</p>
               <a class="btn btn-primary" href={mailto}><Icon name="mail" />{c.applyButton}</a>
               <p class="small muted">{d.applyEmail}<br />{c.applyNote}</p>
-            </>
+            </div>
           )}
-        </div>
-      </aside>
+        </aside>
+      </div>
     </div>
   </section>
 </Base>
-
-

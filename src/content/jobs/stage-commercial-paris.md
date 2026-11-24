@@ -2,6 +2,7 @@
 title: "Stage commercial : développement auprès des syndicats d'énergie et des opérateurs de bornes"
 summary: Prospecter les syndicats d'énergie et les opérateurs de bornes, préparer nos audits gratuits et suivre le pipeline avec le CEO.
 location: Paris, Station F
+city: Paris
 type: Stage
 start: Février 2027
 duration: 6 mois
@@ -12,6 +13,7 @@ lang: fr
 applyEmail: achraf.gharsalli@evimo.fr
 applySubject: Candidature - Stage Commercial IRVE
 tallyUrl: https://tally.so/r/5XZoGN
+tallyOption: "Stage commercial : développement auprès des syndicats d'énergie et des opérateurs de bornes (Paris)"
 order: 2
 published: true
 ---

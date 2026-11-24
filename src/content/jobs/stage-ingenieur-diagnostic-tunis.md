@@ -2,6 +2,7 @@
 title: "Stage ingénieur : détection et diagnostic des pannes de bornes de recharge"
 summary: Analyser les logs OCPP de bornes réelles, vérifier les diagnostics d'EVIMO One et enrichir notre base de connaissances.
 location: Tunisie, full remote
+city: Tunis
 type: Stage de fin d'études
 duration: 6 mois
 paid: Stage rémunéré
@@ -10,6 +11,7 @@ lang: fr
 applyEmail: achraf.gharsalli@evimo.fr
 applySubject: Candidature - Stage Ingénieur Diagnostic Bornes IRVE
 tallyUrl: https://tally.so/r/5XZoGN
+tallyOption: "Stage ingénieur : détection et diagnostic des pannes de bornes (Tunisie, full remote)"
 order: 1
 published: true
 ---
