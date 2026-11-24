@@ -50,7 +50,3 @@ Un stage rémunéré de six mois à Station F, au contact direct du CEO et de no
 
 - **Télétravail :** nous sommes très flexibles. Vous organisez vos semaines entre Station F, la maison et les rendez-vous clients.
 - **Équipement :** un ordinateur vous est fourni.
-
-## Pour candidater
-
-Envoyez votre CV et quelques lignes sur ce qui vous attire dans la mobilité électrique.

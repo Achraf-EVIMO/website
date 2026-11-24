@@ -20,7 +20,7 @@ export const site = {
 
   // Bureaux (pied de page).
   address: 'Station F, 5 parvis Alan Turing, 75013 Paris',
-  // Siège social (mentions légales) : ajouter le numéro et la rue.
-  legalAddress: '78300 Poissy',
+  // Siège social (mentions légales).
+  legalAddress: '46 rue de Villiers, 78300 Poissy',
   tunisCity: 'Tunis',
 };

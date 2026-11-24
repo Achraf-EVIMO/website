@@ -7,6 +7,7 @@ type: Stage de fin d'études
 duration: 6 mois
 paid: Stage rémunéré
 remote: Full remote
+equipment: Ordinateur fourni
 lang: fr
 applyEmail: achraf.gharsalli@evimo.fr
 applySubject: Candidature - Stage Ingénieur Diagnostic Bornes IRVE
@@ -46,6 +47,5 @@ Aujourd'hui, de nombreuses pannes de bornes ne sont jamais détectées, ou reste
 
 Un stage rémunéré de six mois, **en full remote depuis la Tunisie**, au sein d'une équipe d'ingénieurs et de data scientists, avec un impact direct sur le produit et un contact avec nos clients français. **Une embauche est envisagée à l'issue du stage.**
 
-## Pour candidater
-
-Envoyez votre CV et quelques lignes sur un problème technique que vous avez résolu.
+- **Télétravail :** le stage se fait entièrement à distance, depuis la Tunisie.
+- **Équipement :** un ordinateur vous est fourni.
