@@ -1,0 +1,222 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from './Icon.astro';
+import type { Dict } from '../i18n/fr';
+
+interface Props { t: Dict }
+const { t } = Astro.props;
+const i = t.incident;
+const fr = t.lang === 'fr';
+---
+<Base t={t} current="home" alternate={fr ? '/en/' : '/'}>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="dot"></span>{t.hero.eyebrow}</span>
+        <h1 class="h1">{t.hero.title}</h1>
+        <p class="lead">{t.hero.lead}</p>
+        <div class="btns">
+          <a class="btn btn-primary" href={t.routes.audit}>{t.hero.primary}<Icon name="arrow" /></a>
+          <a class="btn" href="#comment">{t.hero.secondary}</a>
+        </div>
+        <p class="hero-note"><Icon name="check" />{t.hero.note}</p>
+      </div>
+
+      <article class="card incident" aria-label={i.illustrative}>
+        <div class="card-head">
+          <span>{i.head} <span class="id">· {i.id}</span></span>
+          <span class="illustrative">{i.illustrative}</span>
+        </div>
+        <div class="card-sec">
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">
+            <span class="st"><span class="st-dot pulse"></span>{i.status}</span>
+            <span class="tag tag-accent">{i.detected}</span>
+            <span class="tag">{i.notReported}</span>
+          </div>
+          <h2 class="title">{i.title}</h2>
+          <p class="meta">{i.meta}</p>
+        </div>
+        <div class="card-sec">
+          <p class="label">{i.cause}</p>
+          <p class="cause">{i.causeValue}</p>
+          <div class="confidence"><span>{i.confidence}</span><span class="bar"><span style="width:87%"></span></span><span class="num">0.87</span></div>
+        </div>
+        <div class="card-sec">
+          <dl class="kv"><dt>{i.signals}</dt><dd>{i.signalsValue}</dd></dl>
+        </div>
+        <div class="card-sec">
+          <p class="label">{i.plan}</p>
+          <ul class="checks">
+            {i.planItems.map((p) => <li><Icon name="check" />{p}</li>)}
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Partenaires -->
+  <div class="proof">
+    <div class="container proof-in">
+      <span class="proof-label">{t.proof.label}</span>
+      <div class="proof-names">{t.proof.names.map((n) => <span>{n}</span>)}</div>
+      <span class="proof-note">{t.proof.note}</span>
+    </div>
+  </div>
+
+  <!-- 01 Le constat -->
+  <section class="section" id="constat">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-num">{t.problem.num}</span>
+        <h2 class="h2">{t.problem.title}</h2>
+        <p class="lead">{t.problem.lead}</p>
+      </div>
+      <div class="grid-3">
+        {t.problem.items.map((it) => (
+          <div class="card tile">
+            <span class="icon"><Icon name={it.icon} /></span>
+            <h3 class="h3">{it.title}</h3>
+            <p>{it.text}</p>
+          </div>
+        ))}
+      </div>
+      <blockquote class="quote">
+        <p>{t.problem.quote}</p>
+        <footer>{t.problem.quoteBy}</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 02 Comment -->
+  <section class="section" id="comment">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-num">{t.how.num}</span>
+        <h2 class="h2">{t.how.title}</h2>
+        <p class="lead">{t.how.lead}</p>
+      </div>
+      <div class="steps">
+        {t.how.steps.map((s, idx) => (
+          <div class="card step">
+            <div class="step-copy">
+              <span class="step-n"><b>{s.n}</b>{s.kicker}</span>
+              <h3 class="h3" style="font-size:22px">{s.title}</h3>
+              <p>{s.text}</p>
+            </div>
+            <div>
+              {idx === 0 && (
+                <pre class="code" aria-label="OCPP"><span class="dim">10:42:01  CP-014  </span><span class="k">StatusNotification</span>  <span class="s">Faulted</span>  GroundFailure
+<span class="dim">10:42:01  CP-014  </span><span class="k">ConnectionLost</span>      <span class="dim">backhaul</span>
+<span class="dim">10:42:02  CP-015  </span><span class="k">ConnectionLost</span>      <span class="dim">backhaul</span>
+<span class="dim">10:42:05  CP-002  </span><span class="k">StatusNotification</span>  <span class="s">Faulted</span>  <span class="hl">ConnectorLockFailure</span>
+<span class="dim">10:42:06  CP-011  </span><span class="k">MeterValues</span>         <span class="n">21.4</span> kW  <span class="dim">drift −4%</span>
+<span class="dim">10:42:08  CP-009  </span><span class="k">StartTransaction</span>    <span class="s">failed</span>  retry <span class="n">2</span>
+<span class="dim">10:42:10  CP-002  </span><span class="k">ChangeAvailability</span>  <span class="s">rejected</span></pre>
+              )}
+              {idx === 1 && (
+                <div class="card" style="box-shadow:none">
+                  <div class="card-sec">
+                    <p class="label">{i.cause}</p>
+                    <p class="cause">{i.causeValue}</p>
+                    <div class="confidence"><span>{i.confidence}</span><span class="bar"><span style="width:87%"></span></span><span class="num">0.87</span></div>
+                  </div>
+                  <div class="card-sec">
+                    <ul class="checks">
+                      <li><Icon name="check" />{fr ? 'Code défaut constructeur reconnu' : 'Manufacturer fault code recognised'}</li>
+                      <li><Icon name="check" />{fr ? '3 pannes identiques résolues sur ce modèle' : '3 identical faults resolved on this model'}</li>
+                      <li><Icon name="check" />{fr ? 'Déverrouillage à distance sans effet' : 'Remote unlock had no effect'}</li>
+                    </ul>
+                  </div>
+                </div>
+              )}
+              {idx === 2 && (
+                <div class="funnel">
+                  {t.how.funnel.map((f) => (
+                    <div class="funnel-row">
+                      <div class="lbl"><span>{f.label}</span><b>{f.value}</b></div>
+                      <span class="bar"><span style={`width:${f.pct}%`}></span></span>
+                    </div>
+                  ))}
+                  <p class="illustrative" style="margin-top:6px">{t.how.funnelNote}</p>
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 Produit -->
+  <section class="section" id="produit">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-num">{t.product.num}</span>
+        <h2 class="h2">{t.product.title}</h2>
+        <p class="lead">{t.product.lead}</p>
+      </div>
+      <div class="grid-2">
+        {[t.product.proxy, t.product.one].map((p) => (
+          <div class="card product">
+            <span class="tag tag-accent" style="justify-self:start">{p.tag}</span>
+            <h3 class="h3" style="font-size:24px">{p.title}</h3>
+            <p class="muted">{p.text}</p>
+            <ul>{p.items.map((x) => <li><Icon name="check" />{x}</li>)}</ul>
+          </div>
+        ))}
+      </div>
+      <div class="product-foot">
+        {t.product.foot.map((x) => <span><Icon name="check" />{x}</span>)}
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 Pour qui -->
+  <section class="section" id="pour-qui">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-num">{t.who.num}</span>
+        <h2 class="h2">{t.who.title}</h2>
+      </div>
+      <div class="grid-3">
+        {t.who.items.map((w) => (
+          <div class={`card who${w.primary ? ' primary' : ''}`}>
+            <h3 class="h3">{w.title}</h3>
+            <p>{w.text}</p>
+            <ul>{w.points.map((p) => <li>{p}</li>)}</ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 Sécurité -->
+  <section class="section" id="securite">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-num">{t.security.num}</span>
+        <h2 class="h2">{t.security.title}</h2>
+      </div>
+      <div class="sec-list">
+        {t.security.items.map((s) => (
+          <div><h3>{s.title}</h3><p>{s.text}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Appel à l'action -->
+  <section class="section" id="audit">
+    <div class="container">
+      <div class="cta">
+        <div style="display:grid;gap:18px;position:relative;z-index:1">
+          <h2 class="h2">{t.cta.title}</h2>
+          <p>{t.cta.text}</p>
+          <div class="btns"><a class="btn btn-primary" href={t.routes.audit}>{t.cta.button}<Icon name="arrow" /></a></div>
+        </div>
+        <ul>{t.cta.items.map((x) => <li><Icon name="check" />{x}</li>)}</ul>
+      </div>
+    </div>
+  </section>
+</Base>

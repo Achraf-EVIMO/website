@@ -1,0 +1,52 @@
+---
+import Logo from './Logo.astro';
+import Icon from './Icon.astro';
+import type { Dict } from '../i18n/fr';
+
+interface Props { t: Dict; alternate: string; current?: string }
+const { t, alternate, current } = Astro.props;
+const home = t.routes.home;
+---
+<header class="header" id="top" data-open="false">
+  <div class="container header-in">
+    <a class="brand" href={home} aria-label="EVIMO"><Logo /></a>
+    <nav class="nav" id="nav" aria-label={t.nav.menu}>
+      <a href={`${home}#produit`}>{t.nav.product}</a>
+      <a href={`${home}#pour-qui`}>{t.nav.who}</a>
+      <a href={`${home}#securite`}>{t.nav.security}</a>
+      <a href={t.routes.careers} aria-current={current === 'careers' ? 'page' : undefined}>{t.nav.careers}</a>
+    </nav>
+    <div class="header-end">
+      <a class="lang" href={alternate} hreflang={t.lang === 'fr' ? 'en' : 'fr'} aria-label={t.nav.switchLabel}>{t.nav.switchTo}</a>
+      <a class="btn btn-primary btn-sm" href={t.routes.audit}>
+        <span class="btn-cta-label">{t.nav.ctaLong}</span>
+        <span class="btn-cta-short">{t.nav.cta}</span>
+      </a>
+      <button class="menu-btn" type="button" aria-controls="nav" aria-expanded="false" aria-label={t.nav.menu}>
+        <Icon name="menu" />
+      </button>
+    </div>
+  </div>
+</header>
+
+<style>
+  .btn-cta-short { display: none; }
+  @media (max-width: 900px) { .btn-cta-short { display: inline; } }
+  @media (max-width: 380px) { .lang { display: none; } }
+</style>
+
+<script>
+  const header = document.querySelector('.header');
+  const btn = header?.querySelector('.menu-btn');
+  btn?.addEventListener('click', () => {
+    const open = header?.getAttribute('data-open') === 'true';
+    header?.setAttribute('data-open', String(!open));
+    btn.setAttribute('aria-expanded', String(!open));
+  });
+  header?.querySelectorAll('.nav a').forEach((a) =>
+    a.addEventListener('click', () => {
+      header.setAttribute('data-open', 'false');
+      btn?.setAttribute('aria-expanded', 'false');
+    }),
+  );
+</script>

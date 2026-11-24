@@ -1,0 +1,48 @@
+---
+import Logo from './Logo.astro';
+import { site } from '../site.config';
+import type { Dict } from '../i18n/fr';
+
+interface Props { t: Dict }
+const { t } = Astro.props;
+const home = t.routes.home;
+const year = new Date().getFullYear();
+---
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href={home} aria-label="EVIMO"><Logo style="height:22px;width:auto" /></a>
+        <p class="tagline">{t.footer.tagline}</p>
+      </div>
+      <div>
+        <h4>{t.footer.product}</h4>
+        <ul>
+          <li><a href={`${home}#produit`}>{t.nav.product}</a></li>
+          <li><a href={`${home}#pour-qui`}>{t.nav.who}</a></li>
+          <li><a href={`${home}#securite`}>{t.nav.security}</a></li>
+          <li><a href={t.routes.audit}>{t.nav.ctaLong}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>{t.footer.company}</h4>
+        <ul>
+          <li><a href={t.routes.careers}>{t.nav.careers}</a></li>
+          <li><a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a></li>
+          {site.linkedinUrl && <li><a href={site.linkedinUrl} rel="noopener" target="_blank">LinkedIn</a></li>}
+        </ul>
+      </div>
+      <div>
+        <h4>{t.footer.legal}</h4>
+        <ul>
+          <li><a href={t.routes.legal}>{t.footer.legalNotice}</a></li>
+          <li><a href={t.routes.privacy}>{t.footer.privacy}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© {year} {t.footer.rights} · {t.footer.incubated}</span>
+      <span>{site.address} · {site.tunisCity}</span>
+    </div>
+  </div>
+</footer>

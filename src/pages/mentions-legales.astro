@@ -1,0 +1,46 @@
+---
+import Legal from '../components/Legal.astro';
+import { site } from '../site.config';
+---
+<Legal title="Mentions légales" updated="24 novembre 2026">
+  <h2>Éditeur du site</h2>
+  <p>
+    <strong>EVIMO</strong>, société par actions simplifiée (SAS) au capital de 23 000 €<br />
+    Siège social : {site.address}, France<br />
+    RCS Paris — SIREN 941 373 318 — SIRET 941 373 318 00018<br />
+    TVA intracommunautaire : FR80941373318<br />
+    Contact : <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>
+  </p>
+
+  <h2>Directeur de la publication</h2>
+  <p>Seif SASSI.</p>
+
+  <h2>Hébergement</h2>
+  <p>
+    Le site est hébergé par GitHub, Inc. (service GitHub Pages),<br />
+    88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis — <a href="https://github.com" rel="noopener">github.com</a>.
+  </p>
+
+  <h2>Propriété intellectuelle</h2>
+  <p>
+    L'ensemble des contenus du site (textes, visuels, logos, marques) est la propriété d'EVIMO ou de ses partenaires et
+    est protégé par le droit de la propriété intellectuelle. Toute reproduction, même partielle, sans autorisation écrite
+    préalable est interdite. Les noms de clients et partenaires cités le sont avec leur accord.
+  </p>
+
+  <h2>Données personnelles et cookies</h2>
+  <p>
+    Le site ne dépose aucun cookie et n'utilise aucun outil de mesure d'audience. Le traitement des données que vous
+    nous transmettez (demande d'audit, candidature) est décrit dans notre <a href="/confidentialite/">politique de confidentialité</a>.
+  </p>
+
+  <h2>Responsabilité</h2>
+  <p>
+    Les informations publiées sur ce site sont fournies à titre indicatif. Les illustrations du produit sont des exemples
+    et ne constituent pas un engagement de résultat. EVIMO ne saurait être tenue responsable des dommages résultant de
+    l'utilisation du site.
+  </p>
+
+  <h2>Droit applicable</h2>
+  <p>Le site est soumis au droit français. Tout litige relève des tribunaux compétents de Paris.</p>
+</Legal>

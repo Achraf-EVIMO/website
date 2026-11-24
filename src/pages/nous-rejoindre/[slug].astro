@@ -1,0 +1,58 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import { getCollection, render } from 'astro:content';
+import { fr } from '../../i18n/fr';
+import { en } from '../../i18n/en';
+
+export async function getStaticPaths() {
+  const jobs = await getCollection('jobs', ({ data }) => data.published);
+  return jobs.map((job) => ({ params: { slug: job.id }, props: { job } }));
+}
+
+const { job } = Astro.props;
+const d = job.data;
+const t = d.lang === 'en' ? en : fr;
+const c = t.careers;
+const { Content } = await render(job);
+const mailto = `mailto:${d.applyEmail}?subject=${encodeURIComponent(d.applySubject)}`;
+---
+<Base t={t} title={d.title} description={d.summary} current="careers" alternate={t.lang === 'fr' ? '/en/careers/' : '/nous-rejoindre/'}>
+  <section class="page-head">
+    <div class="container">
+      <a class="link" href={t.routes.careers} style="display:inline-flex;gap:6px;align-items:center;font-size:14.5px"><Icon name="back" class="i16" />{c.back}</a>
+      <h1 class="h1" style="font-size:clamp(30px,4vw,44px);max-width:900px">{d.title}</h1>
+      <p class="lead">{d.summary}</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:56px">
+    <div class="container two-col">
+      <article class="prose"><Content /></article>
+
+      <aside class="sticky">
+        <div class="card apply">
+          <dl class="facts">
+            <div><dt>{c.facts.location}</dt><dd>{d.location}</dd></div>
+            <div><dt>{c.facts.type}</dt><dd>{d.type}</dd></div>
+            {d.start && <div><dt>{c.facts.start}</dt><dd>{d.start}</dd></div>}
+            {d.duration && <div><dt>{c.facts.duration}</dt><dd>{d.duration}</dd></div>}
+            {d.paid && <div><dt>{c.facts.paid}</dt><dd>{d.paid}</dd></div>}
+          </dl>
+          {d.tallyUrl ? (
+            <a class="btn btn-primary" href={d.tallyUrl} target="_blank" rel="noopener">{c.applyTally}<Icon name="arrow" /></a>
+          ) : (
+            <>
+              <p class="small muted">{c.applyIntro}</p>
+              <p class="subject">{d.applySubject}</p>
+              <a class="btn btn-primary" href={mailto}><Icon name="mail" />{c.applyButton}</a>
+              <p class="small muted">{d.applyEmail}<br />{c.applyNote}</p>
+            </>
+          )}
+        </div>
+      </aside>
+    </div>
+  </section>
+</Base>
+
+
