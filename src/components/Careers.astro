@@ -14,16 +14,15 @@ const jobs = (await getCollection('jobs', ({ data }) => data.published)).sort((a
 <Base t={t} title={c.title} description={c.lead} current="careers" alternate={fr ? '/en/careers/' : '/nous-rejoindre/'}>
   <section class="page-head">
     <div class="container">
-      <span class="eyebrow"><span class="dot"></span>{c.title}</span>
-      <h1 class="h1" style="font-size:clamp(34px,4.6vw,52px);max-width:820px">{fr ? 'Construisez l\'outil qui fait marcher les bornes de recharge.' : 'Build the tool that keeps charging stations working.'}</h1>
+      <h1 class="display">{fr ? 'Construisez l\'outil qui fait marcher les bornes de recharge.' : 'Build the tool that keeps charging stations working.'}</h1>
       <p class="lead">{c.lead}</p>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" style="padding-top:8px">
     <div class="container">
-      <div class="section-head" style="margin-bottom:28px">
-        <h2 class="h2" style="font-size:28px">{c.openTitle} <span class="muted num" style="font-weight:500">({jobs.length})</span></h2>
+      <div style="margin-bottom:28px">
+        <h2 class="h2" style="font-size:clamp(28px,3vw,40px)">{c.openTitle} <span class="muted num" style="font-weight:500">({jobs.length})</span></h2>
       </div>
       <div class="jobs">
         {jobs.length === 0 && <p class="empty">{c.none}</p>}
@@ -36,27 +35,28 @@ const jobs = (await getCollection('jobs', ({ data }) => data.published)).sort((a
                 <span>{j.data.type}</span>
                 {j.data.duration && <span>{j.data.duration}</span>}
                 {j.data.start && <span>{j.data.start}</span>}
-                {!fr && j.data.lang === 'fr' && <span class="tag">{c.inFrench}</span>}
+                {!fr && j.data.lang === 'fr' && <span class="pill">{c.inFrench}</span>}
               </div>
             </div>
             <span class="go">{c.see}<Icon name="arrow" /></span>
           </a>
         ))}
       </div>
-      <p class="muted" style="margin-top:20px;font-size:15px">
-        {c.spontaneous} <a class="link" href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>.
-      </p>
+      <div class="job" style="margin-top:14px;background:transparent;border-style:dashed">
+        <p class="muted" style="font-size:16px">{c.spontaneous}</p>
+        <a class="btn btn-sm" href={site.applyTallyUrl} target="_blank" rel="noopener">{c.applyTally}</a>
+      </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="section-head" style="margin-bottom:28px">
-        <h2 class="h2" style="font-size:28px">{c.valuesTitle}</h2>
+      <div style="margin-bottom:28px">
+        <h2 class="h2" style="font-size:clamp(28px,3vw,40px)">{c.valuesTitle}</h2>
       </div>
-      <div class="values">
+      <div class="three" style="margin-top:0">
         {c.values.map((v) => (
-          <div class="card"><h3 class="h3">{v.title}</h3><p>{v.text}</p></div>
+          <div class="panel"><h3 style="font-size:22px">{v.title}</h3><p>{v.text}</p></div>
         ))}
       </div>
     </div>

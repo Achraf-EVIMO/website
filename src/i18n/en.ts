@@ -30,9 +30,9 @@ export const en: Dict = {
     eyebrow: 'AI-assisted maintenance for EV charging infrastructure',
     title: 'Every intervention fixes the fault the first time.',
     lead:
-      'EVIMO detects the faults on your charging stations, including the ones nobody sees, diagnoses them from OCPP logs and manufacturer documentation, then sends the technician with the right part and the right procedure.',
+      'Across your whole network, EVIMO spots the stations that are down without anyone reporting it, finds the cause and sends the technician with the right part.',
     primary: 'Audit my maintenance history',
-    secondary: 'See how it works',
+    secondary: 'How it works',
     note: 'Free audit, run on your own maintenance data.',
   },
   incident: {
@@ -69,18 +69,21 @@ export const en: Dict = {
     items: [
       {
         icon: 'eye',
+        stat: '6 days',
         title: 'Faults nobody sees',
         text:
           'A station offline for a week, a fault that comes back every Tuesday, a session that stops too early: nothing surfaces until a driver complains.',
       },
       {
         icon: 'truck',
+        stat: '2 trips',
         title: 'Diagnosis done on site',
         text:
           'The technician discovers the fault on arrival, without the right part. They leave, order it, come back. The station stays down in the meantime.',
       },
       {
         icon: 'scale',
+        stat: '0 proof',
         title: 'Contracts that are hard to audit',
         text:
           'Public owners pay for maintenance but cannot check, station by station, response times, ignored faults and the quality of each intervention.',
@@ -88,11 +91,11 @@ export const en: Dict = {
     ],
     quote:
       '“Our operator only has time for tickets and phone calls. Nobody reads the weak signals — so I do it myself, by hand.”',
-    quoteBy: 'Public energy syndicate, 340 charge points. Customer discovery interview, 2026.',
+    quoteBy: 'Public energy syndicate, 340 charge points · customer discovery interview, 2026',
   },
   how: {
     num: '02',
-    title: 'Detect, diagnose, fix it the first time.',
+    title: 'The journey of a fault, with EVIMO.',
     lead: 'Three steps, in that order. You cannot get right an intervention that was never triggered.',
     steps: [
       {
@@ -144,7 +147,7 @@ export const en: Dict = {
   },
   sim: {
     num: '03',
-    title: 'What you save, with your own numbers.',
+    title: 'What you save, with your numbers.',
     lead:
       'Set your fleet size and your failure rate. The model is arithmetic, not a promise: every assumption is yours, and we check it against your data during the audit.',
     inputs: {
@@ -169,6 +172,45 @@ export const en: Dict = {
     model:
       'Assumptions: 120 OCPP messages per charge point per day, 6 alerts per real fault before grouping. Change them freely; we check them against your data during the audit.',
     cta: 'Check it on my data',
+  },
+  map: {
+    caption: 'Network — 1,204 charge points',
+    fault: 'Unreported fault',
+    detected: 'Detected, being diagnosed',
+    ok: 'In service',
+    cardStatus: 'Offline for 6 days · no ticket',
+    cardTitle: 'Cergy Sud — station 09 no longer charges',
+    detectedBy: 'Detected by EVIMO',
+    label: 'Illustrative network map',
+  },
+  partners: {
+    title: 'Deployed with',
+    note: 'Plugs into your existing CSMS. Does not replace it.',
+    roles: {
+      SIGEIF: 'Public energy syndicate, Île-de-France',
+      SDEM50: 'Public energy syndicate, Manche',
+      ANYOS: 'Charging station maker, Toulouse',
+    },
+  },
+  flux: {
+    title: 'Two hundred and eighteen messages. One incident.',
+    lead: 'EVIMO reads the raw OCPP stream of your CSMS, groups what belongs together and keeps only what needs a decision.',
+    action: 'Action',
+    actionValue: 'Escalate to the field',
+  },
+  route: {
+    steps: [
+      { title: 'Detect', text: 'Every message from every station is read, continuously. Forty alerts become one incident.' },
+      { title: 'Diagnose', text: 'Station history, faults already resolved, manufacturer documentation: a probable cause, with its confidence.' },
+      { title: 'Fix it the first time', text: 'Remotely when possible. Otherwise the technician leaves with the diagnosis, the part and the procedure.' },
+    ],
+  },
+  simOut: {
+    signals: 'Messages read per month',
+    incidents: 'Real incidents',
+    remote: 'Fixed remotely',
+    absorbed: 'Alerts absorbed',
+    year: 'Estimated savings per year',
   },
   product: {
     num: '04',
@@ -303,7 +345,7 @@ export const en: Dict = {
     ],
     openTitle: 'Open positions',
     none: 'No open positions right now.',
-    spontaneous: 'Nothing that fits? Write to us at',
+    spontaneous: 'Nothing that fits? Send us an open application.',
     see: 'View the offer',
     back: 'All positions',
     apply: 'Apply',

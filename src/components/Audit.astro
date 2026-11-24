@@ -13,14 +13,13 @@ const fr = t.lang === 'fr';
 <Base t={t} title={a.title} description={a.lead} current="audit" alternate={fr ? '/en/free-audit/' : '/audit-gratuit/'}>
   <section class="page-head">
     <div class="container">
-      <span class="eyebrow"><span class="dot"></span>{t.nav.cta}</span>
-      <h1 class="h1" style="font-size:clamp(34px,4.6vw,52px);max-width:820px">{a.title}</h1>
+      <h1 class="display">{a.title}</h1>
       <p class="lead">{a.lead}</p>
     </div>
   </section>
 
   <section class="section">
-    <div class="container two-col">
+    <div class="container layout-2">
       <div class="prose">
         <h2 style="margin-top:0">{a.whatTitle}</h2>
         <ul>{a.what.map((x) => <li>{x}</li>)}</ul>
@@ -31,8 +30,8 @@ const fr = t.lang === 'fr';
       </div>
 
       <aside class="sticky" id="demande">
-        <div class="card apply">
-          <h2 class="h3">{a.formTitle}</h2>
+        <div class="card">
+          <h2>{a.formTitle}</h2>
           <p class="muted small">{a.formText}</p>
           {site.auditTallyUrl ? (
             <a class="btn btn-primary" href={site.auditTallyUrl} target="_blank" rel="noopener">{a.formTitle}<Icon name="arrow" /></a>

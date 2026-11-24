@@ -30,9 +30,9 @@ export const fr = {
     eyebrow: 'Maintenance des bornes de recharge, assistée par IA',
     title: 'Chaque intervention règle la panne du premier coup.',
     lead:
-      "EVIMO détecte les pannes de vos bornes, même celles que personne ne voit, les diagnostique à partir des logs OCPP et de la documentation constructeur, puis envoie le technicien avec la bonne pièce et la bonne procédure.",
+      "Sur tout votre territoire, EVIMO repère les bornes en panne que personne ne signale, trouve la cause et envoie le technicien avec la bonne pièce.",
     primary: 'Faire auditer mon historique',
-    secondary: 'Voir comment ça marche',
+    secondary: 'Comment ça marche',
     note: 'Audit gratuit, sur vos propres données de maintenance.',
   },
   incident: {
@@ -69,18 +69,21 @@ export const fr = {
     items: [
       {
         icon: 'eye',
+        stat: '6 jours',
         title: 'Des pannes que personne ne voit',
         text:
           "Une borne hors ligne pendant une semaine, un défaut qui revient chaque mardi, une charge qui s'arrête trop tôt : rien ne remonte tant qu'un usager ne se plaint pas.",
       },
       {
         icon: 'truck',
+        stat: '2 trajets',
         title: 'Un diagnostic fait sur place',
         text:
           "Le technicien découvre la panne en arrivant, sans la bonne pièce. Il repart, commande, revient. La borne reste indisponible pendant ce temps.",
       },
       {
         icon: 'scale',
+        stat: '0 preuve',
         title: 'Un contrat difficile à contrôler',
         text:
           "Le syndicat paie la maintenance, mais ne peut pas vérifier borne par borne les délais, les pannes laissées de côté et la qualité des interventions.",
@@ -88,11 +91,11 @@ export const fr = {
     ],
     quote:
       "« Notre opérateur n'a le temps de traiter que les tickets et les appels. Personne ne lit les signaux faibles, alors je le fais moi-même, à la main. »",
-    quoteBy: "Syndicat d'énergie, 340 points de charge. Entretien de découverte, 2026.",
+    quoteBy: "Syndicat d'énergie, 340 points de charge · entretien de découverte, 2026",
   },
   how: {
     num: '02',
-    title: 'Détecter, diagnostiquer, réparer du premier coup.',
+    title: "Le trajet d'une panne, avec EVIMO.",
     lead:
       "Trois étapes, dans cet ordre. On ne peut pas réussir une intervention qui n'a jamais été déclenchée.",
     steps: [
@@ -145,7 +148,7 @@ export const fr = {
   },
   sim: {
     num: '03',
-    title: "Ce que vous économisez, avec vos propres chiffres.",
+    title: 'Ce que vous économisez, avec vos chiffres.',
     lead:
       "Réglez la taille de votre parc et votre taux de panne. Le modèle est un calcul, pas une promesse : chaque hypothèse est à vous, et nous la vérifions sur vos données pendant l'audit.",
     inputs: {
@@ -170,6 +173,45 @@ export const fr = {
     model:
       'Hypothèses : 120 messages OCPP par point de charge et par jour, 6 alertes par panne réelle avant regroupement. Chiffres modifiables, vérifiés sur vos données pendant l\'audit.',
     cta: 'Vérifier sur mes données',
+  },
+  map: {
+    caption: 'Réseau — 1 204 points de charge',
+    fault: 'Panne non signalée',
+    detected: 'Détectée, en diagnostic',
+    ok: 'En service',
+    cardStatus: 'Hors ligne depuis 6 jours · aucun ticket',
+    cardTitle: 'Cergy Sud — la borne 09 ne charge plus',
+    detectedBy: 'Détecté par EVIMO',
+    label: 'Carte illustrative du réseau',
+  },
+  partners: {
+    title: 'Déployé avec',
+    note: 'Se branche sur votre supervision existante. Ne la remplace pas.',
+    roles: {
+      SIGEIF: "Syndicat d'énergie, Île-de-France",
+      SDEM50: "Syndicat d'énergies de la Manche",
+      ANYOS: 'Fabricant de bornes, Toulouse',
+    },
+  },
+  flux: {
+    title: 'Deux cent dix-huit messages. Un seul incident.',
+    lead: "EVIMO lit le flux OCPP brut de votre supervision, regroupe ce qui va ensemble et ne garde que ce qui demande une décision.",
+    action: 'Action',
+    actionValue: 'Escalade terrain',
+  },
+  route: {
+    steps: [
+      { title: 'Détecter', text: 'Chaque message de chaque borne est lu, en continu. Quarante alertes deviennent un seul incident.' },
+      { title: 'Diagnostiquer', text: 'Historique de la borne, pannes déjà résolues, documentation constructeur : une cause probable, avec sa confiance.' },
+      { title: 'Réparer du premier coup', text: "À distance quand c'est possible. Sinon, le technicien part avec le diagnostic, la pièce et la procédure." },
+    ],
+  },
+  simOut: {
+    signals: 'Messages lus par mois',
+    incidents: 'Incidents réels',
+    remote: 'Réglés à distance',
+    absorbed: 'Alertes absorbées',
+    year: 'Économie estimée par an',
   },
   product: {
     num: '04',
@@ -306,7 +348,7 @@ export const fr = {
     ],
     openTitle: 'Offres ouvertes',
     none: "Aucune offre ouverte pour le moment.",
-    spontaneous: 'Aucune offre ne vous correspond ? Écrivez-nous à',
+    spontaneous: 'Aucune offre ne vous correspond ? Envoyez-nous une candidature spontanée.',
     see: "Voir l'offre",
     back: 'Toutes les offres',
     apply: 'Postuler',

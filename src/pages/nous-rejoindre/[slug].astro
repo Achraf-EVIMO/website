@@ -20,18 +20,18 @@ const mailto = `mailto:${d.applyEmail}?subject=${encodeURIComponent(d.applySubje
 <Base t={t} title={d.title} description={d.summary} current="careers" alternate={t.lang === 'fr' ? '/en/careers/' : '/nous-rejoindre/'}>
   <section class="page-head">
     <div class="container">
-      <a class="link" href={t.routes.careers} style="display:inline-flex;gap:6px;align-items:center;font-size:14.5px"><Icon name="back" class="i16" />{c.back}</a>
-      <h1 class="h1" style="font-size:clamp(30px,4vw,44px);max-width:900px">{d.title}</h1>
+      <a class="link back" href={t.routes.careers}><Icon name="back" />{c.back}</a>
+      <h1 class="display">{d.title}</h1>
       <p class="lead">{d.summary}</p>
     </div>
   </section>
 
-  <section class="section" style="padding-top:56px">
-    <div class="container two-col">
+  <section class="section" style="padding-top:8px">
+    <div class="container layout-2">
       <article class="prose"><Content /></article>
 
       <aside class="sticky">
-        <div class="card apply">
+        <div class="card">
           <dl class="facts">
             <div><dt>{c.facts.location}</dt><dd>{d.location}</dd></div>
             <div><dt>{c.facts.type}</dt><dd>{d.type}</dd></div>

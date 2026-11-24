@@ -12,6 +12,9 @@ export const site = {
   // Tant qu'il est vide, le bouton ouvre un mail pré-rempli vers contactEmail.
   auditTallyUrl: 'https://tally.so/r/RWD1ZK',
 
+  // Formulaire Tally de candidature (offres et candidatures spontanées).
+  applyTallyUrl: 'https://tally.so/r/5XZoGN',
+
   // Page LinkedIn de l'entreprise (ex. 'https://www.linkedin.com/company/...').
   linkedinUrl: '',
 

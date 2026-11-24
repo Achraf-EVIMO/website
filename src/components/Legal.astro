@@ -8,11 +8,11 @@ const { title, updated } = Astro.props;
 <Base t={fr} title={title} current="legal" alternate="/en/">
   <section class="page-head">
     <div class="container">
-      <h1 class="h1" style="font-size:clamp(32px,4vw,44px)">{title}</h1>
+      <h1 class="display">{title}</h1>
       <p class="muted small">Dernière mise à jour : {updated}</p>
     </div>
   </section>
-  <section class="section" style="padding-top:24px">
+  <section class="section" style="padding-top:8px">
     <div class="container"><article class="prose"><slot /></article></div>
   </section>
 </Base>
