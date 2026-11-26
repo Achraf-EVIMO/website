@@ -37,7 +37,7 @@ Aujourd'hui, de nombreuses pannes de bornes ne sont jamais détectées, ou reste
 
 ## Profil recherché
 
-Étudiant·e en troisième année de cycle ingénieur en électronique, informatique industrielle, systèmes embarqués, télécommunications ou génie électrique (par exemple Sup'Com, ENSIT, INSAT, ENET'Com).
+Étudiant·e en troisième année de cycle ingénieur en électronique, informatique industrielle, systèmes embarqués, télécommunications ou génie électrique.
 
 - À l'aise avec l'analyse de logs et les protocoles de communication.
 - Des notions de Python.
